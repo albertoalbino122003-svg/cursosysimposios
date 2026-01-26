@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif; /* Cambio a Noto Sans */
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal si la pantalla es chica */
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.portada {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #7a1e3a;
+    background-image: url("../assets/imagenes/fondo_vino.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+    /* FLEXBOX para organizar verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 50%; 
+    padding-top: 200px; /* Top del primer elemento (Logo) */
+    padding-right: 5%; /* Un poco de aire a la derecha */
+}
+
+/* ===== LOGO ===== */
+.logo img {
+    width: 650px;
+    height: 100px;
+    object-fit: contain; /* Asegura que la imagen se vea bien en ese espacio */
+    display: block;
+    
+    /* RESPONSIVE: Si la pantalla es pequeña, que no se salga */
+    max-width: 100%; 
+    height: auto;
+}
+
+/* ===== TÍTULO (CONTENIDO) ===== */
+.contenido {
+    margin-top: 25px; /* La distancia entre el logo y el texto */
+    width: 790px;     /* Ancho exacto de XD */
+    max-width: 100%;  /* Para que no rompa en móviles */
+    text-align: left; /* XD dice text-align: left */
+}
+
+.contenido h1 {
+    /* XD Properties */
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;       /* Extra Bold */
+    font-size: 80px;        /* Tamaño exacto */
+    line-height: 109px;     /* Interlineado exacto */
+    letter-spacing: 0px;
+    color: #FEFFFF;         /* Blanco específico */
+    margin-bottom: 0;
+}
+
+/* ===== inicio_sesion===== */
+.login-container {
+    position: absolute;
+    top: 50%;          /* Justo a la mitad de la altura */
+    left: 15%;         /* Al 15% del ancho (zona izquierda vacía) */
+    transform: translateY(-50%); /* Truco matemático para centrar verticalmente exacto */
+    /* TAMAÑO FLUIDO */
+    width: 450px;      /* Ancho base */
+    max-width: 90%;    /* Si la pantalla es menor a 450px, usa el 90% */
+    min-height: 420px;
+    height: auto;      /* Altura flexible */
+
+    /* ESTILO VISUAL */
+    background: rgba(255, 255, 255, 0.062); /* Un poco más visible */
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    backdrop-filter: blur(4px); /* Más borroso para mejor lectura */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 2px black; /* Borde sutil */
+    z-index: 10; /* Asegura que esté encima del fondo */
+}
+
+/* ===== AVATAR ===== */
+.login-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ffffff;
+    margin-bottom: 25px;
+    /* Centrar icono dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-avatar img {
+    width: 50%;
+}
+
+/* ===== INPUTS ===== */
+.login-input {
+    width: 100%;       /* Ocupa el ancho disponible */
+    max-width: 300px;  /* Pero no más de 300px */
+    height: 45px;
+    border-radius: 22px;
+    background: #ffffff;
+    margin-bottom: 16px;
+    border: none;
+    padding: 0 20px;   /* Espacio interno para el texto */
+    font-size: 16px;
+    outline: none;     /* Quita el borde azul al hacer clic */
+}
+
+/* ===== BOTÓN (ANIMADO) ===== */
+.login-button {
+    width: 100%;
+    max-width: 220px;
+    height: 45px;      /* Un poco más alto para el dedo */
+    border-radius: 36px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    background: #1E5B4F;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FEFFFF;
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-decoration: none;   /* QUITA la línea */
+}
+
+.login-button:focus {
+    outline: none;
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    background: #267061;
+}
+
+.login-button:active {
+   transform: scale(0.95);
+}
+.login-button,
+.login-button:visited,
+.login-button:hover,
+.login-button:active,
+.login-button:focus {
+    text-decoration: none;
+    color: #FEFFFF;
+}
+
+
+/* ===== LINK ===== */
+.login-link {
+    margin-top: 5px;        /* más cerca del input */
+    color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Opcional: pequeño ajuste solo para el de contraseña */
+.login-link.forgot {
+    margin-bottom: 1px;    /* separa un poco del botón */
+}
+
+/* ===== RESPONSIVE LOGIN ===== */
+/* 1. Ajuste para Laptops medianas */
+@media (max-width: 900px) {
+    .portada {
+        padding-left: 0;
+        padding-top: 20px;
+        /* Agrega esto para dar aire al final en el cel */
+        padding-bottom: 50px; 
+        align-items: center;
+        justify-content: flex-start;
+        /* Asegura que la altura sea flexible, no fija */
+        height: auto; 
+        min-height: 100vh;
+    }
+}
+@media (max-width: 1300px) {
+    .login-container {
+        left: 5%; /* Lo acercamos más al borde izquierdo */
+    }
+}
+
+/* 2. Ajuste para Tablets y Celulares (Modo Vertical) */
+@media (max-width: 900px) {
+    /* Cambiamos el comportamiento de la portada */
+    .portada {
+        padding-left: 0;
+        padding-top: 20px;
+        align-items: center;
+        justify-content: flex-start; /* Todo arriba */
+    }
+
+    /* Movemos el Login DEBAJO del texto */
+    .login-container {
+        position: relative; /* Ya no flota libremente */
+        top: auto;
+        left: auto;
+        transform: none; /* Quitamos el centrado matemático */
+        
+        margin: 40px auto; /* Margen arriba/abajo y centrado horizontal */
+        width: 90%; /* Ocupa casi toda la pantalla del cel */
+    }
+    
+    /* Ajustes visuales extra */
+    .contenido {
+        text-align: center;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    .contenido h1 {
+        font-size: 40px; /* Reducimos título */
+        line-height: 1.2;
+    }
+}

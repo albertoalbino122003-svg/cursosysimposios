@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif; /* Cambio a Noto Sans */
+}
+
+body {
+    overflow-x: hidden; /* Evita scroll horizontal si la pantalla es chica */
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.portada {
+    min-height: 130vh;
+    padding-bottom: 120px;
+    width: 100%;
+    background-color: #7a1e3a;
+    background-image: url("../assets/imagenes/fondo_vino.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+    /* FLEXBOX para organizar verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 50%; 
+    padding-top: 182px; /* Top del primer elemento (Logo) */
+    padding-right: 5%; /* Un poco de aire a la derecha */
+}
+
+/* ===== LOGO ===== */
+.logo img {
+    width: 650px;
+    height: 100px;
+    object-fit: contain; /* Asegura que la imagen se vea bien en ese espacio */
+    display: block;
+    
+    /* RESPONSIVE: Si la pantalla es pequeña, que no se salga */
+    max-width: 100%; 
+    height: auto;
+}
+
+/* ===== TÍTULO (CONTENIDO) ===== */
+.contenido {
+    margin-top: 25px; /* La distancia entre el logo y el texto */
+    width: 790px;     /* Ancho exacto de XD */
+    max-width: 100%;  /* Para que no rompa en móviles */
+    text-align: left; /* XD dice text-align: left */
+}
+
+.contenido h1 {
+    /* XD Properties */
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;       /* Extra Bold */
+    font-size: 80px;        /* Tamaño exacto */
+    line-height: 109px;     /* Interlineado exacto */
+    letter-spacing: 0px;
+    color: #FEFFFF;         /* Blanco específico */
+    margin-bottom: 0;
+}
+
+/* ===== PANEL ===== */
+.form-panel {
+    position: absolute;
+    top: 91px;
+    left: 137px;
+    width: 637px;
+    height: 899px;
+
+    background: rgba(236, 234, 231, 0.35);
+    border-radius: 58px;
+    padding: 45px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TITULO ===== */
+.panel-title {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/* ===== CAMPOS ===== */
+.field {
+    margin-bottom: 18px;
+}
+
+.field.full input {
+    width: 100%;
+}
+
+.field.half {
+    width: 48%;
+    display: inline-block;
+}
+
+.field.left {
+    margin-right: 4%;
+}
+
+label {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    height: 34px;
+    border-radius: 18px;
+    border: none;
+    padding: 0 14px;
+    font-size: 14px;
+}
+
+/* ===== RADIOS ===== */
+.field.radio {
+    width: 48%;
+    display: inline-block;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+/* ===== BOTON ===== */
+.btn {
+    margin-top: auto;
+    align-self: flex-end;
+
+    background: #0C6B5A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 26px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===== LOGOS ===== */
+.logos {
+    position: absolute;
+    top: 140px;
+    left: 900px;
+    width: 800px;
+    height: 120px;
+
+    background: rgba(255,255,255,0.1); /* placeholder */
+}
+
+/* ===== TEXTO DERECHO ===== */
+.hero-text {
+    position: absolute;
+    top: 360px;
+    left: 977px;
+    color: #FFFFFF;
+}
+
+.hero-text p {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.hero-text h1 {
+    font-size: 80px;
+    font-weight: 800;
+    margin: 0;
+}

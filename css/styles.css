@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.portada {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #7a1e3a;
+    background-image: url("../assets/imagenes/fondo_vino.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* FLEXBOX para organizar verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 50%; 
+    padding-top: 182px; /* Top del primer elemento (Logo) */
+    padding-right: 5%; /* Un poco de aire a la derecha */
+}
+/* ===== LOGO ===== */
+.logo img {
+    width: 650px;
+    height: 100px;
+    object-fit: contain; /* Asegura que la imagen se vea bien en ese espacio */
+    display: block;
+    
+    /* RESPONSIVE: Si la pantalla es pequeña, que no se salga */
+    max-width: 100%; 
+    height: auto;
+}
+/* ===== TÍTULO (CONTENIDO) ===== */
+.contenido {
+    margin-top: 25px; /* La distancia entre el logo y el texto */
+    width: 790px;     /* Ancho exacto de XD */
+    max-width: 100%;  /* Para que no rompa en móviles */
+    text-align: left; /* XD dice text-align: left */
+}
+
+.contenido h1 {
+    /* XD Properties */
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;       /* Extra Bold */
+    font-size: 80px;        /* Tamaño exacto */
+    line-height: 109px;     /* Interlineado exacto */
+    letter-spacing: 0px;
+    color: #FEFFFF;         /* Blanco específico */
+    margin-bottom: 0;
+}
+/* ===== BOTONES ===== */
+.acciones {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los dos botones */
+    width: 500px; /* Ancho del contenedor de botones */
+    height: 175px; /* Altura total del contenedor de botones */
+    max-width: 100%;
+}
+
+.btn {
+    width: 100%; /* Ocupa el ancho del contenedor (637px) */
+    height: 88px;
+    border-radius: 36px;
+    border: 1px solid #707070; /* Borde gris que pide XD */
+    font-size: 40px; /* Aumenté la letra por el tamaño del botón */
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    /* Centrar texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilos específicos de color */
+.btn-primary {
+    background: #FEFFFF;
+    color: #1E5B4F;
+    border: none;
+}
+
+.btn-secondary {
+    background: #1E5B4F; /* Color verde exacto de XD */
+    color: #FEFFFF;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* ===== RESPONSIVE (MÓVIL Y LAPTOP) ===== */
+/* Ajustamos para que en pantallas normales no se vea roto */
+
+@media (max-width: 1400px) {
+    .portada {
+        padding-left: 10%; /* Reducimos el empuje izquierdo */
+        padding-top: 100px;
+        justify-content: center;
+    }
+    
+    .acciones {
+        margin-top: 80px; /* Reducimos el espacio gigante en laptops */
+    }
+}
+
+@media (max-width: 768px) {
+    .portada {
+        padding: 40px 20px;
+        align-items: center; /* Centrado en celular */
+        text-align: center;
+    }
+    
+    .logo img {
+        width: 100%; /* Logo fluido en móvil */
+    }
+    
+    .contenido {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .contenido h1 {
+        font-size: 40px; /* Texto más chico en móvil */
+        line-height: 1.2;
+    }
+    
+    .acciones {
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+    .btn {
+        height: 60px; /* Botones más manejables en móvil */
+        font-size: 18px;
+    }
+}
+
