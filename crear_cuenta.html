@@ -24,8 +24,8 @@
             <span>HRAEI 2026</span>
         </h1>
     </section>
-    <!-- Panel izquierdo -->
-    <div class="form-panel">
+    <!-- Datos personales -->
+    <div class="form-panel" id="datos-personales">
 
         <h2 class="panel-title">Datos Personales</h2>
 
@@ -95,9 +95,44 @@
             <input type="password">
         </div>
 
-        <button class="btn">Continuar</button>
+        <button class="btn" id="btn-continuar">Continuar</button>
     </div>
-</div>
+    <!-- Datos académicos -->
+    <div class="form-panel" id="datos-academicos" style="display: none;">
 
+        <h2 class="panel-title">Datos académicos</h2>
+
+        <div class="field full">
+            <label>Institución de procedencia:</label>
+            <input type="text">
+        </div>
+
+        <div class="field full">
+            <label>Área de especialidad:</label>
+            <input type="text">
+        </div>
+
+        <div class="field full">
+            <label>Nivel académico:</label>
+            <input type="text">
+        </div>
+
+        <div class="field radio left">
+            <label>¿Eres trabajador del HRAEI?</label>
+            <div class="options">
+                <span>Sí</span><span class="dot"></span>
+                <span>No</span><span class="dot"></span>
+            </div>
+        </div>
+
+        <button onclick="location.href='Inicio.html'" class="btn">Crear cuenta</button>
+    </div>
+
+    <script>
+        document.getElementById('btn-continuar').addEventListener('click', function() {
+            document.getElementById('datos-personales').style.display = 'none';
+            document.getElementById('datos-academicos').style.display = 'flex';
+        });
+    </script>
 </body>
 </html>

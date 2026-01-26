@@ -11,7 +11,7 @@ body {
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
 .portada {
-    min-height: 130vh;
+    min-height: 100vh;
     padding-bottom: 120px;
     width: 100%;
     background-color: #7a1e3a;
@@ -64,18 +64,21 @@ body {
 /* ===== PANEL ===== */
 .form-panel {
     position: absolute;
-    top: 91px;
-    left: 137px;
+    top: 50px; /* Ajustado para que no se corte arriba */
+    left: 25%;
+    transform: translateX(-50%); /* Centra el panel horizontalmente */
     width: 637px;
-    height: 899px;
-
-    background: rgba(236, 234, 231, 0.35);
+    /* Quitamos el height fijo para que crezca con el contenido */
+    min-height: auto; 
+    background: rgba(236, 234, 231, 0.25);
     border-radius: 58px;
     padding: 45px;
     box-sizing: border-box;
-
+    
+    /* Agregamos Flexbox al contenedor principal */
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /* ===== TITULO ===== */
@@ -84,24 +87,21 @@ body {
     font-size: 32px;
     font-weight: 800;
     margin-bottom: 30px;
+    width: 100%; /* El título ocupa todo el ancho */
 }
 
 /* ===== CAMPOS ===== */
 .field {
     margin-bottom: 18px;
+    box-sizing: border-box;
 }
 
-.field.full input {
+.field.full {
     width: 100%;
 }
 
 .field.half {
-    width: 48%;
-    display: inline-block;
-}
-
-.field.left {
-    margin-right: 4%;
+    width: 48%; /* El 48% permite que dos quepan con un pequeño espacio en medio */
 }
 
 label {
@@ -119,20 +119,28 @@ input {
     border: none;
     padding: 0 14px;
     font-size: 14px;
+    box-sizing: border-box; /* Importante para que el padding no ensanche el input */
 }
 
 /* ===== RADIOS ===== */
 .field.radio {
-    width: 48%;
-    display: inline-block;
+       width: 48%;
 }
 
 .options {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 15px; /* Más espacio entre Sí y No */
     color: #FFFFFF;
     font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Centrar los puntitos con el texto */
+.options span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .dot {
@@ -140,20 +148,25 @@ input {
     height: 12px;
     border-radius: 50%;
     background: #FFFFFF;
+    display: inline-block;
 }
 
 /* ===== BOTON ===== */
 .btn {
-    margin-top: auto;
-    align-self: flex-end;
-
+    margin-top: 20px;
+    margin-left: auto; /* Empuja el botón a la derecha */
     background: #0C6B5A;
     color: #FFFFFF;
     border: none;
     border-radius: 22px;
-    padding: 10px 26px;
+    padding: 12px 30px;
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #095245;
 }
 
 /* ===== LOGOS ===== */
@@ -163,8 +176,7 @@ input {
     left: 900px;
     width: 800px;
     height: 120px;
-
-    background: rgba(255,255,255,0.1); /* placeholder */
+    background: rgba(255,255,255,0.1);
 }
 
 /* ===== TEXTO DERECHO ===== */
