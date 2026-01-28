@@ -1,0 +1,692 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Detalle de Curso - HRAEI 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#751829",
+              "primary-light": "#962f43",
+              "primary-dark": "#500e1b",
+              "background-light": "#f8f9fa",
+              "background-dark": "#221018",
+              success: "#10B981",
+              "success-bg": "#ECFDF5",
+              error: "#EF4444",
+              "error-bg": "#FEF2F2",
+              "neutral-surface": "#FFFFFF",
+              burgundy: "#570e20",
+            },
+            fontFamily: {
+              display: ["Noto Sans", "sans-serif"],
+              serif: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light text-[#1b0d13] min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
+      <div
+        class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-4 shrink-0">
+          <div class="flex items-center gap-2">
+            <img
+              src="assets/imagenes/logo_HRAEI.png"
+              alt="Logo HRAEI"
+              class="h-12 w-auto"
+            />
+          </div>
+        </div>
+        <div class="hidden md:flex flex-1 max-w-md mx-8">
+          <div class="relative w-full group">
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/60"
+            >
+              <span class="material-symbols-outlined text-[20px]">search</span>
+            </div>
+            <input
+              class="block w-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:bg-white/20 focus:ring-1 focus:ring-white/30 sm:text-sm transition-colors"
+              placeholder="Buscar mis cursos..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-4 md:gap-6">
+          <nav
+            class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/90"
+          >
+            <a class="hover:text-white transition-colors" href="Inicio.html"
+              >Inicio</a
+            >
+            <a
+              class="text-white border-b-2 border-secondary pb-1"
+              href="mis_cursos.html"
+              >Mis Cursos</a
+            >
+            <!-- <a class="hover:text-white transition-colors" href="#">Ayuda</a> -->
+          </nav>
+          <div class="flex items-center gap-3 pl-4 border-l border-white/20">
+            <button
+              class="relative p-1 text-white/80 hover:text-white transition-colors"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+              <span
+                class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary border border-primary"
+              ></span>
+            </button>
+            <div
+              class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/20 p-0.5 cursor-pointer ring-2 ring-transparent hover:ring-white/30 transition-all"
+            >
+              <img
+                alt="User Profile"
+                class="h-full w-full rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOabI9lUMi6KFFADZz5WCyi2hz2Z6zX-DvUkSirFkyB377xKvvaVD6j5vw8s93b9uQq6Pfz4kHaWdM2xkQFh5U0-ntVO15cor7Vur0VDTfy4mSMylgegbCB4ekC0MgFQDG_53Bpfn2xs3tP-i-NTIkHUKRhkmmh_cL0Id2qKsZEacTB-zC69DPNTpSVT8TS8seHjYVcPJ8z2Uj9QFH9F4sJPU9ECrLkHzHTSskE5hTv_NHuvOV-fwLgrPB_3IcCtn8OKHdXjaRKBI"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 w-full pb-12">
+      <div class="bg-[#570e20] text-white py-10 relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#751829]/50 to-transparent pointer-events-none"
+        ></div>
+        <div class="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
+          <nav
+            class="flex items-center gap-2 text-xs text-white/60 mb-6 uppercase tracking-wider font-semibold"
+          >
+            <a class="hover:text-white transition-colors" href="Inicio.html"
+              >Inicio</a
+            >
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <a class="hover:text-white transition-colors" href="mis_cursos.html"
+              >Mis Cursos</a
+            >
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-white">Detalle</span>
+          </nav>
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div class="flex-1">
+              <h1
+                class="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight mb-3"
+              >
+                Violencia contra la mujer: Abordaje Clínico Integral
+              </h1>
+              <p
+                class="text-white/80 text-lg max-w-2xl leading-relaxed font-light"
+              >
+                Estrategias multidisciplinarias para la detección, atención y
+                seguimiento de casos en el entorno hospitalario.
+              </p>
+            </div>
+            <a
+              class="inline-flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-colors group bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/20 hover:bg-white/20"
+              href="mis_cursos.html"
+            >
+              <span
+                class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform"
+                >arrow_back</span
+              >
+              Volver a Mis Cursos
+            </a>
+          </div>
+          <div
+            class="mt-8 bg-black/20 p-4 rounded-xl border border-white/10 backdrop-blur-sm max-w-3xl"
+          >
+            <div class="flex gap-6 justify-between items-end mb-2">
+              <div class="flex flex-col">
+                <span
+                  class="text-xs font-bold text-white/70 uppercase tracking-wide"
+                  >Progreso General</span
+                >
+                <span class="text-2xl font-bold text-white">65%</span>
+              </div>
+              <span class="text-xs font-medium text-white/50"
+                >Completado hasta la fecha</span
+              >
+            </div>
+            <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-emerald-400 rounded-full transition-all duration-500 ease-out shadow-[0_0_10px_rgba(52,211,153,0.5)]"
+                style="width: 65%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 md:px-10 py-8 -mt-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-8 flex flex-col gap-6">
+            <section
+              class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+            >
+              <div
+                class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/30"
+              >
+                <h3
+                  class="text-[#570e20] text-lg font-bold flex items-center gap-3"
+                >
+                  <span class="material-symbols-outlined text-[#751829]"
+                    >video_camera_front</span
+                  >
+                  Asistencia a Sesiones Zoom
+                </h3>
+                <span
+                  class="text-xs font-bold bg-[#751829]/10 text-[#751829] px-3 py-1 rounded-full border border-[#751829]/20"
+                  >Requerido</span
+                >
+              </div>
+              <div class="p-0">
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left border-collapse">
+                    <thead>
+                      <tr
+                        class="text-xs text-gray-400 uppercase border-b border-gray-100 bg-gray-50/50"
+                      >
+                        <th class="py-3 pl-6 font-semibold">Fecha</th>
+                        <th class="py-3 font-semibold">Tema de la Sesión</th>
+                        <th class="py-3 pr-6 font-semibold text-right">
+                          Estatus
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                      <tr
+                        class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                      >
+                        <td class="py-4 pl-6 font-medium text-gray-900">
+                          12 Ene 2026
+                        </td>
+                        <td class="py-4 text-gray-600">
+                          Introducción a la Cardiología Moderna
+                        </td>
+                        <td class="py-4 pr-6 text-right">
+                          <span
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-100"
+                          >
+                            <span class="material-symbols-outlined text-sm"
+                              >check_circle</span
+                            >
+                            Asistió
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                      >
+                        <td class="py-4 pl-6 font-medium text-gray-900">
+                          14 Ene 2026
+                        </td>
+                        <td class="py-4 text-gray-600">
+                          Protocolos de Emergencia y Triaje
+                        </td>
+                        <td class="py-4 pr-6 text-right">
+                          <span
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 border border-red-100"
+                          >
+                            <span class="material-symbols-outlined text-sm"
+                              >cancel</span
+                            >
+                            Falta
+                          </span>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="py-4 pl-6 font-medium text-gray-900">
+                          20 Ene 2026
+                        </td>
+                        <td class="py-4 text-gray-600">
+                          Nuevas Tecnologías en Cirugía
+                        </td>
+                        <td class="py-4 pr-6 text-right">
+                          <span
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-500 border border-gray-200"
+                          >
+                            <span class="material-symbols-outlined text-sm"
+                              >schedule</span
+                            >
+                            Próximo
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section
+              class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+            >
+              <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/30">
+                <h3
+                  class="text-[#570e20] text-lg font-bold flex items-center gap-3"
+                >
+                  <span class="material-symbols-outlined text-[#751829]"
+                    >quiz</span
+                  >
+                  Exámenes Diagnósticos
+                </h3>
+              </div>
+              <div class="p-6 flex flex-col gap-4">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-[#751829]/30 hover:shadow-md transition-all bg-white group cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 rounded-l-lg"
+                  ></div>
+                  <div class="flex items-start gap-4 pl-2">
+                    <div class="bg-emerald-50 p-2 rounded-lg text-emerald-600">
+                      <span class="material-symbols-outlined"
+                        >assignment_turned_in</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-1">
+                        Módulo 1: Conceptos Básicos
+                      </h4>
+                      <p class="text-xs text-gray-500">
+                        Realizado el 15 Ene 2026
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-6 mt-3 sm:mt-0 pl-14 sm:pl-0"
+                  >
+                    <div class="text-right">
+                      <span
+                        class="block text-[10px] text-gray-400 font-bold uppercase tracking-wider"
+                        >Calificación</span
+                      >
+                      <span class="block font-bold text-lg text-gray-900"
+                        >9.2<span class="text-sm text-gray-400 font-normal"
+                          >/10</span
+                        ></span
+                      >
+                    </div>
+                    <span
+                      class="px-3 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-100"
+                      >Aprobado</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-[#751829]/30 hover:shadow-md transition-all bg-white group cursor-pointer relative overflow-hidden"
+                >
+                  <div
+                    class="absolute left-0 top-0 bottom-0 w-1 bg-gray-300 rounded-l-lg"
+                  ></div>
+                  <div class="flex items-start gap-4 pl-2">
+                    <div
+                      class="bg-gray-100 p-2 rounded-lg text-gray-500 group-hover:bg-[#751829] group-hover:text-white transition-colors"
+                    >
+                      <span class="material-symbols-outlined">lock_open</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-1">
+                        Módulo 2: Casos Clínicos
+                      </h4>
+                      <p class="text-xs text-gray-500">
+                        Disponible hasta el 25 Ene 2026
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-6 mt-3 sm:mt-0 pl-14 sm:pl-0"
+                  >
+                    <div class="text-right opacity-50">
+                      <span
+                        class="block text-[10px] text-gray-400 font-bold uppercase tracking-wider"
+                        >Calificación</span
+                      >
+                      <span class="block font-bold text-lg text-gray-900"
+                        >--<span class="text-sm text-gray-400 font-normal"
+                          >/10</span
+                        ></span
+                      >
+                    </div>
+                    <span
+                      class="px-3 py-1 rounded-md text-xs font-bold bg-gray-100 text-gray-600 border border-gray-200"
+                      >Pendiente</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section
+              class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+            >
+              <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/30">
+                <h3
+                  class="text-[#570e20] text-lg font-bold flex items-center gap-3"
+                >
+                  <span class="material-symbols-outlined text-[#751829]"
+                    >rate_review</span
+                  >
+                  Encuesta de Satisfacción
+                </h3>
+              </div>
+              <div class="p-6">
+                <div
+                  class="flex flex-col md:flex-row gap-6 items-center justify-between bg-[#fcf8fa] p-5 rounded-lg border border-[#f3e7ec]"
+                >
+                  <div class="flex gap-4 items-start">
+                    <div
+                      class="bg-[#751829]/10 text-[#751829] p-3 rounded-full shrink-0"
+                    >
+                      <span class="material-symbols-outlined">campaign</span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-1">
+                        Tu opinión es importante
+                      </h4>
+                      <p class="text-sm text-gray-600 leading-relaxed max-w-md">
+                        Completa la encuesta final para ayudarnos a mejorar.
+                        Este es un requisito indispensable para liberar tu
+                        constancia.
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="shrink-0 bg-[#751829] hover:bg-[#500e1b] text-white font-medium py-2.5 px-6 rounded-lg transition-colors shadow-md shadow-[#751829]/20 flex items-center gap-2"
+                  >
+                    Realizar Encuesta
+                    <span class="material-symbols-outlined text-sm"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+            <div
+              class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden"
+            >
+              <div class="bg-[#570e20] p-6 text-white relative overflow-hidden">
+                <div
+                  class="absolute -right-6 -top-6 size-24 bg-white/5 rounded-full blur-xl"
+                ></div>
+                <div
+                  class="absolute -left-6 -bottom-6 size-24 bg-white/5 rounded-full blur-xl"
+                ></div>
+                <h3
+                  class="text-lg font-bold tracking-tight mb-1 relative z-10 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined"
+                    >workspace_premium</span
+                  >
+                  Estado de Certificación
+                </h3>
+                <p class="text-xs text-white/70 relative z-10">
+                  Requisitos para descargar constancia
+                </p>
+              </div>
+              <div class="p-6 flex flex-col gap-6">
+                <ul class="flex flex-col gap-5">
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="mt-0.5 size-5 rounded-full bg-emerald-100 border border-emerald-200 flex items-center justify-center shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-emerald-600 text-sm font-bold"
+                        >check</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex justify-between items-start">
+                        <p class="text-sm font-bold text-gray-800">
+                          80% Asistencia Mínima
+                        </p>
+                        <span
+                          class="text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100"
+                          >OK</span
+                        >
+                      </div>
+                      <div
+                        class="w-full h-1.5 bg-gray-100 rounded-full mt-2 overflow-hidden"
+                      >
+                        <div
+                          class="bg-emerald-500 h-full rounded-full"
+                          style="width: 90%"
+                        ></div>
+                      </div>
+                      <p class="text-[11px] text-gray-500 mt-1">
+                        Tu asistencia actual:
+                        <span class="font-bold text-emerald-600">90%</span>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="mt-0.5 size-5 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-gray-400 text-sm font-bold"
+                        >remove</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex justify-between items-start">
+                        <p class="text-sm font-bold text-gray-500">
+                          Aprobar Exámenes
+                        </p>
+                      </div>
+                      <p class="text-[11px] text-gray-400 mt-1">
+                        Pendiente: Módulo 2
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div
+                      class="mt-0.5 size-5 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center shrink-0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-gray-400 text-sm font-bold"
+                        >remove</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-sm font-bold text-gray-500">
+                        Encuesta Finalizada
+                      </p>
+                      <p class="text-[11px] text-gray-400 mt-1">Pendiente</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="h-px w-full bg-gray-100"></div>
+                <div class="space-y-3">
+                  <button
+                    class="w-full bg-gray-100 text-gray-400 font-bold py-3 px-4 rounded-lg flex justify-center items-center gap-2 cursor-not-allowed border border-transparent"
+                    disabled=""
+                  >
+                    <span class="material-symbols-outlined">download</span>
+                    Descargar Constancia
+                  </button>
+                  <p class="text-xs text-center text-gray-400 leading-tight">
+                    El botón se habilitará automáticamente al completar todos
+                    los requisitos.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-[#221018] rounded-xl p-6 text-white relative overflow-hidden group shadow-lg"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-[#751829]/40 to-transparent group-hover:from-[#751829]/60 transition-all duration-500"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="bg-white/10 w-fit p-2 rounded-lg mb-4 backdrop-blur-sm"
+                >
+                  <span class="material-symbols-outlined text-white"
+                    >support_agent</span
+                  >
+                </div>
+                <h4 class="font-bold text-lg mb-2">¿Necesitas ayuda?</h4>
+                <p class="text-sm text-gray-300 mb-4 font-light">
+                  Si crees que hay un error en tu registro de asistencia,
+                  contáctanos inmediatamente.
+                </p>
+                <a
+                  class="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1"
+                  href="#"
+                >
+                  Contactar Soporte
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary"
+    >
+      <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h4 class="font-bold text-white mb-4">Redes Sociales</h4>
+            <ul class="space-y-2 text-sm text-white/70">
+              <li>
+                <a
+                  href="https://www.facebook.com/share/14VLkV9scHQ/?mibextid=wwXIfr"
+                  target="_blank"
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  >Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/hrae.ixtapaluca?igsh=Z3Ryd3VqbmQ2eWdm"
+                  target="_blank"
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://x.com/HRAEIxtapaluca?t=v-f7qiSr3yUbD7wdf7V0wA&s=08"
+                  target="_blank"
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@hraeixtapaluca3460"
+                  target="_blank"
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  >Youtube</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-4">Institucional</h4>
+            <ul class="space-y-2 text-sm text-white/70">
+              <li>
+                <a
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  href="#"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                  href="#"
+                  >Directorio</a
+                >
+              </li>
+              <!-- <li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Investigación</a></li>
+<li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Bolsa de Trabajo</a></li> -->
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-4">Contacto</h4>
+            <div class="flex flex-col gap-3 text-sm text-white/70">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-[18px] mt-0.5"
+                  >location_on</span
+                >
+                <span
+                  >Carretera Federal México-Puebla Km 34.5, Ixtapaluca, Edo.
+                  Méx.</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span>(55) 5972 9800 ext. 1215</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span>acarino@hraei.gob.mx</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50"
+        >
+          <p>
+            © 2026 Hospital Regional de Alta Especialidad de Ixtapaluca. Todos
+            los derechos reservados.
+          </p>
+          <div class="flex gap-4">
+            <a class="hover:text-white" href="#">Aviso de Privacidad</a>
+            <a class="hover:text-white" href="#">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
