@@ -34,13 +34,33 @@
           <img src="assets/iconos/nombre.svg" alt="iconos" />
         </div>
         <!-- contenedores  -->
-        <input type="text" class="login-input" placeholder="Usuario o Correo" />
-        <input type="password" class="login-input" placeholder="Contraseña" />
+        <input type="text" id="usuario" class="login-input" placeholder="Usuario o Correo" />
+        <input type="password" id="contrasena" class="login-input" placeholder="Contraseña" />
         <!-- Botones -->
         <a href="" class="login-link forgot">Olvidé mi contraseña</a>
-        <a href="Inicio.html" class="login-button">Iniciar Sesión</a>
+        <button onclick="validarLogin()" class="login-button">Iniciar Sesión</button>
         <a href="crear_cuenta.html" class="login-link">Crear cuenta</a>
       </div>
     </div>
+
+    <script>
+      function validarLogin() {
+        const usuario = document.getElementById("usuario").value.trim();
+        const contrasena = document.getElementById("contrasena").value.trim();
+
+        if (usuario === "") {
+          alert("Por favor, ingresa tu usuario o correo");
+          return;
+        }
+
+        if (contrasena === "") {
+          alert("Por favor, ingresa tu contraseña");
+          return;
+        }
+
+        // Si todo está bien, redirige a Inicio.html
+        window.location.href = "Inicio.html";
+      }
+    </script>
   </body>
 </html>
