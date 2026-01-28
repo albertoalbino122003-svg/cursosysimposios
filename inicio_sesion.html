@@ -34,7 +34,7 @@
           <img src="assets/iconos/nombre.svg" alt="iconos" />
         </div>
         <!-- contenedores  -->
-        <input type="text" id="usuario" class="login-input" placeholder="Usuario o Correo" />
+        <input type="text" id="usuario" class="login-input" placeholder="Correo electronico" />
         <input type="password" id="contrasena" class="login-input" placeholder="Contraseña" />
         <!-- Botones -->
         <a href="" class="login-link forgot">Olvidé mi contraseña</a>
@@ -49,7 +49,7 @@
         const contrasena = document.getElementById("contrasena").value.trim();
 
         if (usuario === "") {
-          alert("Por favor, ingresa tu usuario o correo");
+          alert("Por favor, ingresa tu correo electrónico y contraseña");
           return;
         }
 

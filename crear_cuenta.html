@@ -31,68 +31,72 @@
 
         <div class="field full">
             <label>Nombre (s):</label>
-            <input type="text">
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
         </div>
 
         <div class="field half left">
             <label>Apellido Paterno:</label>
-            <input type="text">
+            <input type="text" id="apellido-paterno" placeholder="Ingresa tu apellido paterno">
         </div>
 
         <div class="field half right">
             <label>Apellido Materno:</label>
-            <input type="text">
+            <input type="text" id="apellido-materno" placeholder="Ingresa tu apellido materno">
         </div>
 
         <div class="field full">
             <label>Correo Electrónico:</label>
-            <input type="email">
+            <input type="email" id="correo" placeholder="Ingresa tu correo">
         </div>
 
         <div class="field half left">
             <label>Teléfono:</label>
-            <input type="text">
+            <input type="text" id="telefono" placeholder="Ingresa tu teléfono">
         </div>
 
         <div class="field half right">
             <label>Entidad Federativa:</label>
-            <input type="text" placeholder="(Estado)">
+            <input type="text" id="estado" placeholder="(Estado)">
         </div>
 
         <div class="field half left">
             <label>Fecha de nacimiento:</label>
-            <input type="text">
+            <input type="text" id="fecha-nacimiento" placeholder="DD/MM/YYYY">
         </div>
 
         <div class="field half right">
             <label>Género:</label>
-            <input type="text">
+            <input type="text" id="genero" placeholder="Hombre/Mujer/Otro">
         </div>
 
         <div class="field radio left">
             <label>¿Padece alguna discapacidad?</label>
             <div class="options">
-                <span>Sí</span><span class="dot"></span>
-                <span>No</span><span class="dot"></span>
+                <input type="radio" name="discapacidad" id="discapacidad-si" value="Sí">
+                <label for="discapacidad-si">Sí</label>
+                <input type="radio" name="discapacidad" id="discapacidad-no" value="No">
+                <label for="discapacidad-no">No</label>
             </div>
         </div>
 
         <div class="field radio right">
             <label>¿Pertenece a un grupo indígena?</label>
             <div class="options">
-                <span>Sí</span><span class="dot"></span>
-                <span>No</span><span class="dot"></span>
+                <input type="radio" name="indigena" id="indigena-si" value="Sí">
+                <label for="indigena-si">Sí</label>
+                <input type="radio" name="indigena" id="indigena-no" value="No">
+                <label for="indigena-no">No</label>
             </div>
         </div>
 
         <div class="field half left">
             <label>Contraseña:</label>
-            <input type="password">
+            <input type="password" id="contrasena" placeholder="Ingresa una contraseña">
         </div>
 
         <div class="field half right">
             <label>Confirmar contraseña:</label>
-            <input type="password">
+            <input type="password" id="confirmar-contrasena" placeholder="Confirma tu contraseña">
         </div>
 
         <button class="btn" id="btn-continuar">Continuar</button>
@@ -104,34 +108,115 @@
 
         <div class="field full">
             <label>Institución de procedencia:</label>
-            <input type="text">
+            <input type="text" id="institucion" placeholder="Ingresa tu institución">
         </div>
 
         <div class="field full">
             <label>Área de especialidad:</label>
-            <input type="text">
+            <input type="text" id="especialidad" placeholder="Ingresa tu área de especialidad">
         </div>
 
         <div class="field full">
             <label>Nivel académico:</label>
-            <input type="text">
+            <input type="text" id="nivel-academico" placeholder="Ingresa tu nivel académico">
         </div>
 
         <div class="field radio left">
             <label>¿Eres trabajador del HRAEI?</label>
             <div class="options">
-                <span>Sí</span><span class="dot"></span>
-                <span>No</span><span class="dot"></span>
+                <input type="radio" name="trabajador-hraei" id="trabajador-si" value="Sí">
+                <label for="trabajador-si">Sí</label>
+                <input type="radio" name="trabajador-hraei" id="trabajador-no" value="No">
+                <label for="trabajador-no">No</label>
             </div>
         </div>
 
-        <button onclick="location.href='Inicio.html'" class="btn">Crear cuenta</button>
+        <button onclick="validarCrearCuenta()" class="btn">Crear cuenta</button>
     </div>
 
     <script>
+        function validarDatosPersonales() {
+            const nombre = document.getElementById("nombre").value.trim();
+            const apellidoPaterno = document.getElementById("apellido-paterno").value.trim();
+            const apellidoMaterno = document.getElementById("apellido-materno").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const estado = document.getElementById("estado").value.trim();
+            const fechaNacimiento = document.getElementById("fecha-nacimiento").value.trim();
+            const genero = document.getElementById("genero").value.trim();
+            const contrasena = document.getElementById("contrasena").value;
+            const confirmarContrasena = document.getElementById("confirmar-contrasena").value;
+
+            // Validar que todos los campos estén llenos
+            if (!nombre || !apellidoPaterno || !apellidoMaterno || !correo || !telefono || !estado || !fechaNacimiento || !genero) {
+                alert("Por favor, completa todos los campos de datos personales");
+                return false;
+            }
+
+            // Validar que se seleccione una opción para discapacidad
+            const discapacidad = document.querySelector('input[name="discapacidad"]:checked');
+            if (!discapacidad) {
+                alert("Por favor, selecciona una opción para discapacidad");
+                return false;
+            }
+
+            // Validar que se seleccione una opción para grupo indígena
+            const indigena = document.querySelector('input[name="indigena"]:checked');
+            if (!indigena) {
+                alert("Por favor, selecciona si perteneces a un grupo indígena");
+                return false;
+            }
+
+            // Validar que la contraseña no esté vacía
+            if (!contrasena) {
+                alert("Por favor, ingresa una contraseña");
+                return false;
+            }
+
+            // Validar que las contraseñas coincidan
+            if (contrasena !== confirmarContrasena) {
+                alert("Las contraseñas no coinciden");
+                return false;
+            }
+
+            // Validar que el correo sea válido
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(correo)) {
+                alert("Por favor, ingresa un correo electrónico válido");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validarCrearCuenta() {
+            const institucion = document.getElementById("institucion").value.trim();
+            const especialidad = document.getElementById("especialidad").value.trim();
+            const nivelAcademico = document.getElementById("nivel-academico").value.trim();
+
+            // Validar que todos los campos académicos estén llenos
+            if (!institucion || !especialidad || !nivelAcademico) {
+                alert("Por favor, completa todos los campos de datos académicos");
+                return false;
+            }
+
+            // Validar que se seleccione una opción para trabajador del HRAEI
+            const trabajador = document.querySelector('input[name="trabajador-hraei"]:checked');
+            if (!trabajador) {
+                alert("Por favor, selecciona si eres trabajador del HRAEI");
+                return false;
+            }
+
+            // Si todo está bien, redirige a Inicio.html
+            alert("¡Cuenta creada exitosamente!");
+            window.location.href = "Inicio.html";
+        }
+
         document.getElementById('btn-continuar').addEventListener('click', function() {
-            document.getElementById('datos-personales').style.display = 'none';
-            document.getElementById('datos-academicos').style.display = 'flex';
+            if (validarDatosPersonales()) {
+                document.getElementById('datos-personales').style.display = 'none';
+                document.getElementById('datos-academicos').style.display = 'flex';
+            }
         });
     </script>
 </body>
