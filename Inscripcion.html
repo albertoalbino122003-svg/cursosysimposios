@@ -428,7 +428,7 @@
                     <div class="relative group">
                       <label
                         class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1"
-                        >CURP</label
+                        >Correo</label
                       >
                       <div
                         class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium font-mono text-sm tracking-wide"
@@ -437,7 +437,7 @@
                           class="material-symbols-outlined text-gray-400 mr-3 text-[20px]"
                           >badge</span
                         >
-                        MOCA850921HDFRRN09
+                        alejandro.morales@gmail.com
                       </div>
                     </div>
                     <div class="relative group">
@@ -452,7 +452,27 @@
                           class="material-symbols-outlined text-gray-400 mr-3 text-[20px]"
                           >apartment</span
                         >
-                        HRAEI - Cardiología
+                        HRAEI
+                      </div>
+                    </div>
+                                        <div class="relative group">
+                      <label
+                        class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1"
+                        >Especialidad</label
+                      >
+                      <div
+                        class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium"
+                      >
+                        <span
+                          class="material-symbols-outlined text-gray-400 mr-3 text-[20px]"
+                          >person</span
+                        >
+                        cardiología
+                        <span
+                          class="ml-auto material-symbols-outlined text-green-600 text-[18px]"
+                          title="Verificado"
+                          >verified</span
+                        >
                       </div>
                     </div>
                   </div>
@@ -477,7 +497,7 @@
                     </div>
                   </div>
                   <button
-                    onclick="window.location.href = 'confirmacion.html'"
+                    onclick="confirmarInscripcion()"
                     class="w-full bg-primary hover:bg-[#5a1632] text-white font-bold text-lg py-4 px-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
                   >
                     <span>Confirmar Inscripción</span>
@@ -486,14 +506,22 @@
                       >arrow_forward</span
                     >
                   </button>
+                  <script>
+                    function confirmarInscripcion() {
+                      const confirmacion = confirm("¿Seguro que deseas confirmar tu inscripción?");
+                      if (confirmacion) {
+                        window.location.href = 'confirmacion.html';
+                      }
+                    }
+                  </script>
                 </div>
                 <div
                   class="bg-gray-50 dark:bg-zinc-900/50 p-4 border-t border-gray-100 dark:border-zinc-700 text-center"
                 >
                   <p class="text-xs text-gray-500">
                     <span class="font-bold">¿Dudas?</span> Contacte a
-                    <a class="text-primary hover:underline" href="#"
-                      >Soporte Académico</a
+                    <a class="text-primary hover:underline" href="#info"
+                      >Educacion Continua</a
                     >
                   </p>
                 </div>
@@ -518,7 +546,7 @@
       </div>
     </main>
     <footer
-      class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary"
+      class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary" id="info"
     >
       <div class="max-w-[1280px] mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
