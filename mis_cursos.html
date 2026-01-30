@@ -55,12 +55,21 @@
           "GRAD" 0,
           "opsz" 24;
       }
+              body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: #611232 !important;
+        }
+        footer {
+            background-color: #611232 !important;
+        }
     </style>
     <!-- contenido -->
   </head>
-  <body
-    class="bg-background-light dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col"
-  >
+  <body class="dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
       <div
         class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4"

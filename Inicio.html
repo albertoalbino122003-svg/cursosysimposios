@@ -44,11 +44,21 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: #611232 !important;
+        }
+        footer {
+            background-color: #611232 !important;
+        }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col">
+<body class="dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col">
     <!-- TopNavBar -->
     <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
         <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4">
@@ -99,7 +109,7 @@
             <div class="absolute inset-0 z-0">
                 <img class="h-full w-full object-cover opacity-100"
                     data-alt="Modern hospital building facade with glass windows"
-                    src="https://scontent.fmex34-1.fna.fbcdn.net/v/t39.30808-6/320325979_877873316567145_2464869293337605366_n.png?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=s7L55vWkyPUQ7kNvwE3XCga&_nc_oc=AdnjTs5BHKYxPlH-ewMZ4K66RLpL2MLwMeQyYo49nYNBNPJXKSalFvHYm5MtluYg314jYoCKiR1dfY9CxwifpdQP&_nc_zt=23&_nc_ht=scontent.fmex34-1.fna&_nc_gid=JWuqlB0GtM82ZP_bmELDiQ&oh=00_Afqdo0bRQuY5lsYOx1wqoVCaQN-zKo0p2RnFdGmuFD0sgQ&oe=697D6F83" />
+                    src="assets/imagenes/hospital.jpeg" />
                 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 mix-blend-multiply"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
@@ -125,8 +135,8 @@
                             Ver catálogo completo
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                             <!-- </button>
-<button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-6 rounded-lg border border-white/30 transition-all flex items-center gap-2">
-<span class="material-symbols-outlined">play_circle</span>
+                                <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-6 rounded-lg border border-white/30 transition-all flex items-center gap-2">
+                                <span class="material-symbols-outlined">play_circle</span>
                             Video Institucional
                         </button> -->
                     </div>

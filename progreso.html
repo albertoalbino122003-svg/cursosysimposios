@@ -53,9 +53,6 @@
       };
     </script>
     <style>
-      body {
-        font-family: "Manrope", sans-serif;
-      }
       .material-symbols-outlined {
         font-variation-settings:
           "FILL" 1,
@@ -63,9 +60,20 @@
           "GRAD" 0,
           "opsz" 24;
       }
+      body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: #611232 !important;
+        }
+        footer {
+            background-color: #611232 !important;
+        }
     </style>
   </head>
-  <body class="bg-background-light text-[#1b0d13] min-h-screen flex flex-col">
+  <body class="dark:bg-background-dark font-display text-[#1b0d13] min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
       <div
         class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4"
@@ -175,7 +183,7 @@
               Volver a Mis Cursos
             </a>
           </div>
-          <div
+          <!-- <div
             class="mt-8 bg-black/20 p-4 rounded-xl border border-white/10 backdrop-blur-sm max-w-3xl"
           >
             <div class="flex gap-6 justify-between items-end mb-2">
@@ -196,7 +204,7 @@
                 style="width: 65%"
               ></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="max-w-7xl mx-auto px-4 md:px-10 py-8 -mt-4">
@@ -554,10 +562,10 @@
                 </div>
               </div>
             </div>
-            <div
+            <!-- <div
               class="bg-[#221018] rounded-xl p-6 text-white relative overflow-hidden group shadow-lg"
-            >
-              <div
+            > -->
+              <!-- <div
                 class="absolute inset-0 bg-gradient-to-br from-[#751829]/40 to-transparent group-hover:from-[#751829]/60 transition-all duration-500"
               ></div>
               <div class="relative z-10">
@@ -582,7 +590,7 @@
                     >arrow_forward</span
                   >
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
