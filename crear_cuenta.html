@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos y Simposios HRAEI 2026</title>
     <link rel="stylesheet" href="css/styles2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo simple para ocultar elementos */
+        .hidden { display: none; }
+        /* Ajuste para inputs condicionales */
+        .conditional-input { margin-top: 10px; width: 100%; }
+    </style>
 </head>
 <body>
 <div class="portada">
@@ -17,207 +21,193 @@
         </div>
     </header>
 
-    <!-- Contenido -->
     <section class="contenido">
-        <h1>
-            Cursos y Simposios<br>
-            <span>HRAEI 2026</span>
-        </h1>
+        <h1>Cursos y Simposios<br><span>HRAEI 2026</span></h1>
     </section>
-    <!-- Datos personales -->
+
     <div class="form-panel" id="datos-personales">
-
         <h2 class="panel-title">Datos Personales</h2>
-
-        <div class="field full">
-            <label>Nombre (s):</label>
-            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-        </div>
-
-        <div class="field half left">
-            <label>Apellido Paterno:</label>
-            <input type="text" id="apellido-paterno" placeholder="Ingresa tu apellido paterno">
-        </div>
-
-        <div class="field half right">
-            <label>Apellido Materno:</label>
-            <input type="text" id="apellido-materno" placeholder="Ingresa tu apellido materno">
-        </div>
-
-        <div class="field full">
-            <label>Correo Electrónico:</label>
-            <input type="email" id="correo" placeholder="Ingresa tu correo">
-        </div>
-
-        <div class="field half left">
-            <label>Teléfono:</label>
-            <input type="text" id="telefono" placeholder="Ingresa tu teléfono">
-        </div>
-
-        <div class="field half right">
-            <label>Entidad Federativa:</label>
-            <input type="text" id="estado" placeholder="(Estado)">
-        </div>
-
-        <div class="field half left">
-            <label>Fecha de nacimiento:</label>
-            <input type="text" id="fecha-nacimiento" placeholder="DD/MM/YYYY">
-        </div>
-
-        <div class="field half right">
-            <label>Género:</label>
-            <input type="text" id="genero" placeholder="Hombre/Mujer/Otro">
-        </div>
+        <div class="field full"><label>Nombre (s):</label><input type="text" id="nombre"></div>
+        <div class="field half left"><label>Apellido Paterno:</label><input type="text" id="apellido-paterno"></div>
+        <div class="field half right"><label>Apellido Materno:</label><input type="text" id="apellido-materno"></div>
+        <div class="field full"><label>Correo Electrónico:</label><input type="email" id="correo"></div>
+        <div class="field half left"><label>Teléfono:</label><input type="text" id="telefono"></div>
+        <div class="field half right"><label>Entidad Federativa:</label><input type="text" id="estado"></div>
+        <div class="field half left"><label>Fecha de nacimiento:</label><input type="date" id="fecha-nacimiento"></div> <div class="field half right"><label>Género:</label><input type="text" id="genero"></div>
 
         <div class="field radio left">
             <label>¿Padece alguna discapacidad?</label>
             <div class="options">
-                <input type="radio" name="discapacidad" id="discapacidad-si" value="Sí">
+                <input type="radio" name="discapacidad" id="discapacidad-si" value="Sí" onchange="toggleDiscapacidad(true)">
                 <label for="discapacidad-si">Sí</label>
-                <input type="radio" name="discapacidad" id="discapacidad-no" value="No">
+                <input type="radio" name="discapacidad" id="discapacidad-no" value="No" onchange="toggleDiscapacidad(false)">
                 <label for="discapacidad-no">No</label>
             </div>
+            <input type="text" id="especificar-discapacidad" class="conditional-input hidden" placeholder="Especifique cuál...">
         </div>
 
         <div class="field radio right">
             <label>¿Pertenece a un grupo indígena?</label>
             <div class="options">
-                <input type="radio" name="indigena" id="indigena-si" value="Sí">
+                <input type="radio" name="indigena" id="indigena-si" value="Sí" onchange="toggleIndigena(true)">
                 <label for="indigena-si">Sí</label>
-                <input type="radio" name="indigena" id="indigena-no" value="No">
+                <input type="radio" name="indigena" id="indigena-no" value="No" onchange="toggleIndigena(false)">
                 <label for="indigena-no">No</label>
             </div>
+            <input type="text" id="especificar-lengua" class="conditional-input hidden" placeholder="Especifique lengua...">
         </div>
 
-        <div class="field half left">
-            <label>Contraseña:</label>
-            <input type="password" id="contrasena" placeholder="Ingresa una contraseña">
-        </div>
-
-        <div class="field half right">
-            <label>Confirmar contraseña:</label>
-            <input type="password" id="confirmar-contrasena" placeholder="Confirma tu contraseña">
-        </div>
+        <div class="field half left"><label>Contraseña:</label><input type="password" id="contrasena"></div>
+        <div class="field half right"><label>Confirmar contraseña:</label><input type="password" id="confirmar-contrasena"></div>
 
         <button class="btn" id="btn-continuar">Continuar</button>
+        <div style="text-align: center; margin-top: 10px;">
+             <a href="iniciar_sesion.html" style="color: white;">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
     </div>
-    <!-- Datos académicos -->
+
     <div class="form-panel" id="datos-academicos" style="display: none;">
-
         <h2 class="panel-title">Datos académicos</h2>
-
-        <div class="field full">
-            <label>Institución de procedencia:</label>
-            <input type="text" id="institucion" placeholder="Ingresa tu institución">
-        </div>
-
-        <div class="field full">
-            <label>Área de especialidad:</label>
-            <input type="text" id="especialidad" placeholder="Ingresa tu área de especialidad">
-        </div>
-
-        <div class="field full">
-            <label>Nivel académico:</label>
-            <input type="text" id="nivel-academico" placeholder="Ingresa tu nivel académico">
-        </div>
+        <div class="field full"><label>Institución de procedencia:</label><input type="text" id="institucion"></div>
+        <div class="field full"><label>Área de especialidad:</label><input type="text" id="especialidad"></div>
+        <div class="field full"><label>Nivel académico:</label><input type="text" id="nivel-academico"></div>
 
         <div class="field radio left">
             <label>¿Eres trabajador del HRAEI?</label>
             <div class="options">
-                <input type="radio" name="trabajador-hraei" id="trabajador-si" value="Sí">
+                <input type="radio" name="trabajador-hraei" id="trabajador-si" value="Sí" onchange="toggleTrabajador(true)">
                 <label for="trabajador-si">Sí</label>
-                <input type="radio" name="trabajador-hraei" id="trabajador-no" value="No">
+                <input type="radio" name="trabajador-hraei" id="trabajador-no" value="No" onchange="toggleTrabajador(false)">
                 <label for="trabajador-no">No</label>
             </div>
+            <input type="number" id="numero-empleado" class="conditional-input hidden" placeholder="Número de empleado (5-10 dígitos)">
         </div>
 
-        <button onclick="validarCrearCuenta()" class="btn">Crear cuenta</button>
+        <button onclick="registrarUsuario()" class="btn">Crear cuenta</button>
+        <button onclick="volverAtras()" class="btn" style="background-color: #666; margin-top: 10px;">Atrás</button>
     </div>
 
     <script>
-        function validarDatosPersonales() {
-            const nombre = document.getElementById("nombre").value.trim();
-            const apellidoPaterno = document.getElementById("apellido-paterno").value.trim();
-            const apellidoMaterno = document.getElementById("apellido-materno").value.trim();
-            const correo = document.getElementById("correo").value.trim();
-            const telefono = document.getElementById("telefono").value.trim();
-            const estado = document.getElementById("estado").value.trim();
-            const fechaNacimiento = document.getElementById("fecha-nacimiento").value.trim();
-            const genero = document.getElementById("genero").value.trim();
-            const contrasena = document.getElementById("contrasena").value;
-            const confirmarContrasena = document.getElementById("confirmar-contrasena").value;
-
-            // Validar que todos los campos estén llenos
-            if (!nombre || !apellidoPaterno || !apellidoMaterno || !correo || !telefono || !estado || !fechaNacimiento || !genero) {
-                alert("Por favor, completa todos los campos de datos personales");
-                return false;
-            }
-
-            // Validar que se seleccione una opción para discapacidad
-            const discapacidad = document.querySelector('input[name="discapacidad"]:checked');
-            if (!discapacidad) {
-                alert("Por favor, selecciona una opción para discapacidad");
-                return false;
-            }
-
-            // Validar que se seleccione una opción para grupo indígena
-            const indigena = document.querySelector('input[name="indigena"]:checked');
-            if (!indigena) {
-                alert("Por favor, selecciona si perteneces a un grupo indígena");
-                return false;
-            }
-
-            // Validar que la contraseña no esté vacía
-            if (!contrasena) {
-                alert("Por favor, ingresa una contraseña");
-                return false;
-            }
-
-            // Validar que las contraseñas coincidan
-            if (contrasena !== confirmarContrasena) {
-                alert("Las contraseñas no coinciden");
-                return false;
-            }
-
-            // Validar que el correo sea válido
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(correo)) {
-                alert("Por favor, ingresa un correo electrónico válido");
-                return false;
-            }
-
-            return true;
+        // Funciones para mostrar/ocultar campos
+        function toggleDiscapacidad(mostrar) {
+            const input = document.getElementById('especificar-discapacidad');
+            input.style.display = mostrar ? 'block' : 'none';
+            if (!mostrar) input.value = ''; // Limpiar si selecciona No
         }
 
-        function validarCrearCuenta() {
-            const institucion = document.getElementById("institucion").value.trim();
-            const especialidad = document.getElementById("especialidad").value.trim();
-            const nivelAcademico = document.getElementById("nivel-academico").value.trim();
+        function toggleIndigena(mostrar) {
+            const input = document.getElementById('especificar-lengua');
+            input.style.display = mostrar ? 'block' : 'none';
+            if (!mostrar) input.value = '';
+        }
 
-            // Validar que todos los campos académicos estén llenos
-            if (!institucion || !especialidad || !nivelAcademico) {
-                alert("Por favor, completa todos los campos de datos académicos");
-                return false;
-            }
+        function toggleTrabajador(mostrar) {
+            const input = document.getElementById('numero-empleado');
+            input.style.display = mostrar ? 'block' : 'none';
+            if (!mostrar) input.value = '';
+        }
 
-            // Validar que se seleccione una opción para trabajador del HRAEI
-            const trabajador = document.querySelector('input[name="trabajador-hraei"]:checked');
-            if (!trabajador) {
-                alert("Por favor, selecciona si eres trabajador del HRAEI");
-                return false;
-            }
-
-            // Si todo está bien, redirige a Inicio.html
-            alert("¡Cuenta creada exitosamente!");
-            window.location.href = "Inicio.html";
+        function volverAtras() {
+            document.getElementById('datos-academicos').style.display = 'none';
+            document.getElementById('datos-personales').style.display = 'flex'; // O 'block' dependiendo de tu CSS
         }
 
         document.getElementById('btn-continuar').addEventListener('click', function() {
-            if (validarDatosPersonales()) {
-                document.getElementById('datos-personales').style.display = 'none';
-                document.getElementById('datos-academicos').style.display = 'flex';
+            // Validaciones básicas parte 1
+            const pass = document.getElementById("contrasena").value;
+            const confirm = document.getElementById("confirmar-contrasena").value;
+            
+            // Validar condicionales
+            const discap = document.querySelector('input[name="discapacidad"]:checked');
+            const indigena = document.querySelector('input[name="indigena"]:checked');
+
+            if (!discap || !indigena) {
+                alert("Por favor responda las preguntas de Sí/No");
+                return;
             }
+
+            if (discap.value === "Sí" && document.getElementById("especificar-discapacidad").value.trim() === "") {
+                alert("Por favor especifique su discapacidad");
+                return;
+            }
+
+            if (indigena.value === "Sí" && document.getElementById("especificar-lengua").value.trim() === "") {
+                alert("Por favor especifique su lengua indígena");
+                return;
+            }
+
+            if (pass !== confirm || pass === "") {
+                alert("Las contraseñas no coinciden o están vacías");
+                return;
+            }
+
+            // Si pasa, cambia de panel
+            document.getElementById('datos-personales').style.display = 'none';
+            document.getElementById('datos-academicos').style.display = 'flex';
         });
+
+        async function registrarUsuario() {
+            // Recolección de datos
+            const institucion = document.getElementById("institucion").value;
+            const trabajadorOpt = document.querySelector('input[name="trabajador-hraei"]:checked');
+            
+            if (!trabajadorOpt) {
+                alert("Seleccione si es trabajador HRAEI"); return;
+            }
+
+            let numEmpleado = "";
+            if (trabajadorOpt.value === "Sí") {
+                numEmpleado = document.getElementById("numero-empleado").value;
+                // Validación 5 a 10 dígitos
+                if (!/^\d{5,10}$/.test(numEmpleado)) {
+                    alert("El número de empleado debe tener entre 5 y 10 dígitos numéricos.");
+                    return;
+                }
+            }
+
+            // Objeto con TODOS los datos
+            const datos = {
+                nombre: document.getElementById("nombre").value,
+                apellidoPaterno: document.getElementById("apellido-paterno").value,
+                apellidoMaterno: document.getElementById("apellido-materno").value,
+                correo: document.getElementById("correo").value,
+                telefono: document.getElementById("telefono").value,
+                estado: document.getElementById("estado").value,
+                fechaNacimiento: document.getElementById("fecha-nacimiento").value,
+                genero: document.getElementById("genero").value,
+                discapacidad: document.querySelector('input[name="discapacidad"]:checked').value,
+                descDiscapacidad: document.getElementById("especificar-discapacidad").value,
+                indigena: document.querySelector('input[name="indigena"]:checked').value,
+                lenguaIndigena: document.getElementById("especificar-lengua").value,
+                contrasena: document.getElementById("contrasena").value,
+                institucion: document.getElementById("institucion").value,
+                especialidad: document.getElementById("especialidad").value,
+                nivelAcademico: document.getElementById("nivel-academico").value,
+                trabajador: trabajadorOpt.value,
+                numEmpleado: numEmpleado
+            };
+
+            // Enviar a PHP
+            try {
+                const response = await fetch('register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert("¡Cuenta creada exitosamente!");
+                    window.location.href = "iniciar_sesion.html";
+                } else {
+                    alert("Error: " + result.message);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Hubo un error de conexión.");
+            }
+        }
     </script>
 </body>
 </html>

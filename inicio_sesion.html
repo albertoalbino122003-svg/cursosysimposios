@@ -20,7 +20,6 @@
         </div>
       </header>
 
-      <!-- Contenido -->
       <section class="contenido">
         <h1>
           Cursos y Simposios<br />
@@ -33,10 +32,8 @@
           <div class="avatar-image"></div>
           <img src="assets/iconos/nombre.svg" alt="iconos" />
         </div>
-        <!-- contenedores  -->
         <input type="text" id="usuario" class="login-input" placeholder="Correo electronico" />
         <input type="password" id="contrasena" class="login-input" placeholder="Contraseña" />
-        <!-- Botones -->
         <a href="" class="login-link forgot">Olvidé mi contraseña</a>
         <button onclick="validarLogin()" class="login-button">Iniciar Sesión</button>
         <a href="crear_cuenta.html" class="login-link">Crear cuenta</a>
@@ -44,10 +41,11 @@
     </div>
 
     <script>
-      function validarLogin() {
+      async function validarLogin() {
         const usuario = document.getElementById("usuario").value.trim();
         const contrasena = document.getElementById("contrasena").value.trim();
 
+        // Validaciones visuales previas (igual que antes)
         if (usuario === "") {
           alert("Por favor, ingresa tu correo electrónico y contraseña");
           return;
@@ -58,8 +56,34 @@
           return;
         }
 
-        // Si todo está bien, redirige a Inicio.html
-        window.location.href = "Inicio.html";
+        // Nueva lógica de conexión a la Base de Datos
+        try {
+            // Enviamos los datos al archivo PHP
+            const response = await fetch('login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    usuario: usuario,
+                    contrasena: contrasena
+                })
+            });
+
+            // Esperamos la respuesta
+            const data = await response.json();
+
+            if (data.success) {
+                // Si el PHP dice que es correcto, redirigimos
+                window.location.href = "Inicio.html";
+            } else {
+                // Si la contraseña o usuario están mal, mostramos el error del PHP
+                alert(data.message || "Error al iniciar sesión");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Hubo un error al conectar con el servidor.");
+        }
       }
     </script>
   </body>
