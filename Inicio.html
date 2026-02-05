@@ -44,14 +44,17 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         body {
             background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
             background-size: cover;
             background-attachment: fixed;
         }
+
         header {
             background-color: #611232 !important;
         }
+
         footer {
             background-color: #611232 !important;
         }
@@ -94,8 +97,10 @@
                     </button> -->
                     <div
                         class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/20 p-0.5 cursor-pointer ring-2 ring-transparent hover:ring-white/30 transition-all">
-                        <img alt="User Profile" class="h-full w-full rounded-full object-cover "
-                            src="assets/iconos/nombre.svg" />
+                        <a href="perfil.html">
+                            <img alt="User Profile" class="h-full w-full rounded-full object-cover"
+                                src="assets/imagenes/doctor.jpg" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -108,8 +113,7 @@
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
                 <img class="h-full w-full object-cover opacity-100"
-                    data-alt="Modern hospital building facade with glass windows"
-                    src="assets/imagenes/hospital.jpeg" />
+                    data-alt="Modern hospital building facade with glass windows" src="assets/imagenes/hospital.jpeg" />
                 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 mix-blend-multiply"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>

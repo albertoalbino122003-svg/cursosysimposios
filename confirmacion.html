@@ -1,351 +1,265 @@
 <!doctype html>
 <html class="light" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Inscripción Exitosa - HRAEI 2026</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Serif:wght@400;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#691c3d",
-              secondary: "#C38D33",
-              "background-light": "#F8F8F8",
-              "background-dark": "#18181b",
-              surface: "#ffffff",
-            },
-            fontFamily: {
-              display: ["Noto Sans", "sans-serif"],
-              serif: ["Noto Sans", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Inscripción Exitosa - HRAEI 2026</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Serif:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#691c3d",
+            secondary: "#C38D33",
+            "background-light": "#F8F8F8",
+            "background-dark": "#18181b",
+            surface: "#ffffff",
+          },
+          fontFamily: {
+            display: ["Noto Sans", "sans-serif"],
+            serif: ["Noto Sans", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
           },
         },
-      };
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .icon-fill-1 {
-        font-variation-settings:
-          "FILL" 1,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 48;
-      }
-            body {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-      }
-      header {
-        background-color: #611232 !important;
-      }
-      footer {
-        background-color: #611232 !important;
-      }
-    </style>
-  </head>
-  <body
-    class="dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col"
-  >
-    <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
-      <div
-        class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4"
-      >
-        <!-- Logo Section -->
-        <div class="flex items-center gap-4 shrink-0">
-          <div class="flex items-center gap-2">
-            <img
-              src="assets/imagenes/logo_HRAEI.png"
-              alt="Logo HRAEI"
-              class="h-12 w-auto"
-            />
-          </div>
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .icon-fill-1 {
+      font-variation-settings:
+        "FILL" 1,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 48;
+    }
+
+    body {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/imagenes/textura_blanca_1-100.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #611232 !important;
+    }
+
+    footer {
+      background-color: #611232 !important;
+    }
+  </style>
+</head>
+
+<body class="dark:bg-background-dark font-display text-[#191014] antialiased min-h-screen flex flex-col">
+  <header class="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4">
+      <!-- Logo Section -->
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="flex items-center gap-2">
+          <img src="assets/imagenes/logo_HRAEI.png" alt="Logo HRAEI" class="h-12 w-auto" />
         </div>
-        <!-- Search Bar (Hidden on Mobile) -->
-        <div class="hidden md:flex flex-1 max-w-md mx-8">
-          <div class="relative w-full group">
-            <div
-              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/60"
-            >
-              <span class="material-symbols-outlined text-[20px]">search</span>
-            </div>
-            <input
-              class="block w-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:bg-white/20 focus:ring-1 focus:ring-white/30 sm:text-sm transition-colors"
-              placeholder="Buscar cursos o Simposios"
-              type="text"
-            />
+      </div>
+      <!-- Search Bar (Hidden on Mobile) -->
+      <div class="hidden md:flex flex-1 max-w-md mx-8">
+        <div class="relative w-full group">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/60">
+            <span class="material-symbols-outlined text-[20px]">search</span>
           </div>
+          <input
+            class="block w-full pl-10 pr-3 py-2 border-none rounded-lg leading-5 bg-white/10 text-white placeholder-white/60 focus:outline-none focus:bg-white/20 focus:ring-1 focus:ring-white/30 sm:text-sm transition-colors"
+            placeholder="Buscar cursos o Simposios" type="text" />
         </div>
-        <!-- Navigation & Profile -->
-        <div class="flex items-center gap-4 md:gap-6">
-          <nav
-            class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/90"
-          >
-            <a class="hover:text-white transition-colors" href="Inicio.html"
-              >Inicio</a
-            >
-            <a class="hover:text-white transition-colors" href="mis_cursos.html"
-              >Mis Cursos</a
-            >
-            <!-- <a class="hover:text-white transition-colors" href="#">Ayuda</a> -->
-          </nav>
-          <div class="flex items-center gap-3 pl-4 border-l border-white/20">
-            <button
-              class="relative p-1 text-white/80 hover:text-white transition-colors"
-            >
-              <span class="material-symbols-outlined">notifications</span>
-              <span
-                class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary border border-primary"
-              ></span>
-            </button>
-            <div
-              class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/20 p-0.5 cursor-pointer ring-2 ring-transparent hover:ring-white/30 transition-all"
-            >
-              <img
-                alt="User Profile"
-                class="h-full w-full rounded-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOabI9lUMi6KFFADZz5WCyi2hz2Z6zX-DvUkSirFkyB377xKvvaVD6j5vw8s93b9uQq6Pfz4kHaWdM2xkQFh5U0-ntVO15cor7Vur0VDTfy4mSMylgegbCB4ekC0MgFQDG_53Bpfn2xs3tP-i-NTIkHUKRhkmmh_cL0Id2qKsZEacTB-zC69DPNTpSVT8TS8seHjYVcPJ8z2Uj9QFH9F4sJPU9ECrLkHzHTSskE5hTv_NHuvOV-fwLgrPB_3IcCtn8OKHdXjaRKBI"
-              />
-            </div>
+      </div>
+      <!-- Navigation & Profile -->
+      <div class="flex items-center gap-4 md:gap-6">
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/90">
+          <a class="hover:text-white transition-colors" href="Inicio.html">Inicio</a>
+          <a class="hover:text-white transition-colors" href="mis_cursos.html">Mis Cursos</a>
+          <!-- <a class="hover:text-white transition-colors" href="#">Ayuda</a> -->
+        </nav>
+        <div class="flex items-center gap-3 pl-4 border-l border-white/20">
+          <button class="relative p-1 text-white/80 hover:text-white transition-colors">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary border border-primary"></span>
+          </button>
+          <div
+            class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/20 p-0.5 cursor-pointer ring-2 ring-transparent hover:ring-white/30 transition-all">
+            <a href="perfil.html">
+              <img alt="User Profile" class="h-full w-full rounded-full object-cover"
+                src="assets/imagenes/doctor.jpg" />
+            </a>
           </div>
         </div>
       </div>
-    </header>
-    <main
-      class="flex-grow flex items-center justify-center py-12 md:py-20 px-4"
-    >
-      <div class="w-full max-w-2xl animate-fade-in">
-        <div
-          class="bg-white dark:bg-zinc-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-zinc-700 overflow-hidden relative"
-        >
+    </div>
+  </header>
+  <main class="flex-grow flex items-center justify-center py-12 md:py-20 px-4">
+    <div class="w-full max-w-2xl animate-fade-in">
+      <div
+        class="bg-white dark:bg-zinc-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-zinc-700 overflow-hidden relative">
+        <div class="h-3 bg-gradient-to-r from-primary via-primary to-secondary w-full"></div>
+        <div class="p-8 md:p-12 text-center">
+          <div class="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-50 text-green-600">
+            <span class="material-symbols-outlined text-6xl icon-fill-1">check_circle</span>
+          </div>
+          <h1 class="font-serif text-3xl md:text-4xl font-bold text-primary mb-4">
+            ¡Inscripción Exitosa!
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4">
+            Te has inscrito correctamente al curso:<br />
+            <span class="font-bold text-gray-900 dark:text-white">Violencia contra la mujer: Abordaje Clínico
+              Integral</span>
+          </p>
           <div
-            class="h-3 bg-gradient-to-r from-primary via-primary to-secondary w-full"
-          ></div>
-          <div class="p-8 md:p-12 text-center">
-            <div
-              class="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-50 text-green-600"
-            >
-              <span class="material-symbols-outlined text-6xl icon-fill-1"
-                >check_circle</span
-              >
-            </div>
-            <h1
-              class="font-serif text-3xl md:text-4xl font-bold text-primary mb-4"
-            >
-              ¡Inscripción Exitosa!
-            </h1>
-            <p
-              class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4"
-            >
-              Te has inscrito correctamente al curso:<br />
-              <span class="font-bold text-gray-900 dark:text-white"
-                >Violencia contra la mujer: Abordaje Clínico Integral</span
-              >
-            </p>
-            <div
-              class="bg-gray-50 dark:bg-zinc-900/50 rounded-xl p-6 mb-8 border border-gray-100 dark:border-zinc-700 grid grid-cols-1 md:grid-cols-2 gap-4 text-left"
-            >
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-secondary"
-                  >calendar_today</span
-                >
-                <div>
-                  <p
-                    class="text-[10px] font-bold text-gray-500 uppercase tracking-wider"
-                  >
-                    Fecha de inicio
-                  </p>
-                  <p
-                    class="text-sm font-semibold text-gray-800 dark:text-gray-200"
-                  >
-                    15 de Marzo, 2026
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-secondary"
-                  >videocam</span
-                >
-                <div>
-                  <p
-                    class="text-[10px] font-bold text-gray-500 uppercase tracking-wider"
-                  >
-                    Modalidad
-                  </p>
-                  <p
-                    class="text-sm font-semibold text-gray-800 dark:text-gray-200"
-                  >
-                    Virtual vía Zoom
-                  </p>
-                </div>
+            class="bg-gray-50 dark:bg-zinc-900/50 rounded-xl p-6 mb-8 border border-gray-100 dark:border-zinc-700 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary">calendar_today</span>
+              <div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
+                  Fecha de inicio
+                </p>
+                <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                  15 de Marzo, 2026
+                </p>
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button
-                onclick="window.location.href = 'mis_cursos.html'"
-                class="flex-1 bg-primary hover:bg-[#5a1632] text-white font-bold py-4 px-8 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
-              >
-                <span class="material-symbols-outlined">library_books</span>
-                Ir a Mis Cursos
-              </button>
-              <!-- <button class="flex-1 border-2 border-primary text-primary hover:bg-primary/5 font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary">videocam</span>
+              <div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
+                  Modalidad
+                </p>
+                <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                  Virtual vía Zoom
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button onclick="window.location.href = 'mis_cursos.html'"
+              class="flex-1 bg-primary hover:bg-[#5a1632] text-white font-bold py-4 px-8 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined">library_books</span>
+              Ir a Mis Cursos
+            </button>
+            <!-- <button class="flex-1 border-2 border-primary text-primary hover:bg-primary/5 font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2">
 <span class="material-symbols-outlined">download_for_offline</span>
                             Descargar Comprobante
                         </button> -->
-            </div>
-            <div
-              class="flex items-start gap-3 justify-center text-gray-500 dark:text-gray-400 max-w-md mx-auto"
-            >
-              <span
-                class="material-symbols-outlined text-[20px] text-blue-500 mt-0.5"
-                >info</span
-              >
-              <p class="text-xs text-left leading-normal italic">
-                Recuerda que recibirás los enlaces de acceso por correo
-                electrónico 24 horas antes de cada sesión.
-              </p>
-            </div>
           </div>
-        </div>
-        <div class="mt-8 text-center">
-          <a
-            class="text-sm font-medium text-gray-500 hover:text-primary flex items-center justify-center gap-1 transition-colors"
-            href="Inicio.html"
-          >
-            <span class="material-symbols-outlined text-sm">arrow_back</span>
-            Volver al Catálogo de Cursos
-          </a>
+          <div class="flex items-start gap-3 justify-center text-gray-500 dark:text-gray-400 max-w-md mx-auto">
+            <span class="material-symbols-outlined text-[20px] text-blue-500 mt-0.5">info</span>
+            <p class="text-xs text-left leading-normal italic">
+              Recuerda que recibirás los enlaces de acceso por correo
+              electrónico 24 horas antes de cada sesión.
+            </p>
+          </div>
         </div>
       </div>
-    </main>
-    <footer
-      class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary"
-    >
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <h4 class="font-bold text-white mb-4">Redes Sociales</h4>
-            <ul class="space-y-2 text-sm text-white/70">
-              <li>
-                <a
-                  href="https://www.facebook.com/share/14VLkV9scHQ/?mibextid=wwXIfr"
-                  target="_blank"
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  >Facebook</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/hrae.ixtapaluca?igsh=Z3Ryd3VqbmQ2eWdm"
-                  target="_blank"
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  >Instagram</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://x.com/HRAEIxtapaluca?t=v-f7qiSr3yUbD7wdf7V0wA&s=08"
-                  target="_blank"
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  >Twitter</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.youtube.com/@hraeixtapaluca3460"
-                  target="_blank"
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  >Youtube</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-white mb-4">Institucional</h4>
-            <ul class="space-y-2 text-sm text-white/70">
-              <li>
-                <a
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  href="#"
-                  >Sobre Nosotros</a
-                >
-              </li>
-              <li>
-                <a
-                  class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                  href="#"
-                  >Directorio</a
-                >
-              </li>
-              <!-- <li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Investigación</a></li>
+      <div class="mt-8 text-center">
+        <a class="text-sm font-medium text-gray-500 hover:text-primary flex items-center justify-center gap-1 transition-colors"
+          href="Inicio.html">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Volver al Catálogo de Cursos
+        </a>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h4 class="font-bold text-white mb-4">Redes Sociales</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>
+              <a href="https://www.facebook.com/share/14VLkV9scHQ/?mibextid=wwXIfr" target="_blank"
+                class="hover:text-white hover:underline decoration-secondary underline-offset-4">Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/hrae.ixtapaluca?igsh=Z3Ryd3VqbmQ2eWdm" target="_blank"
+                class="hover:text-white hover:underline decoration-secondary underline-offset-4">Instagram</a>
+            </li>
+            <li>
+              <a href="https://x.com/HRAEIxtapaluca?t=v-f7qiSr3yUbD7wdf7V0wA&s=08" target="_blank"
+                class="hover:text-white hover:underline decoration-secondary underline-offset-4">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@hraeixtapaluca3460" target="_blank"
+                class="hover:text-white hover:underline decoration-secondary underline-offset-4">Youtube</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4">Institucional</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>
+              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Sobre
+                Nosotros</a>
+            </li>
+            <li>
+              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4"
+                href="#">Directorio</a>
+            </li>
+            <!-- <li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Investigación</a></li>
 <li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Bolsa de Trabajo</a></li> -->
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold text-white mb-4">Contacto</h4>
-            <div class="flex flex-col gap-3 text-sm text-white/70">
-              <div class="flex items-start gap-2">
-                <span class="material-symbols-outlined text-[18px] mt-0.5"
-                  >location_on</span
-                >
-                <span
-                  >Carretera Federal México-Puebla Km 34.5, Ixtapaluca, Edo.
-                  Méx.</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">call</span>
-                <span>(55) 5972 9800 ext. 1215</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">mail</span>
-                <span>acarino@hraei.gob.mx</span>
-              </div>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4">Contacto</h4>
+          <div class="flex flex-col gap-3 text-sm text-white/70">
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[18px] mt-0.5">location_on</span>
+              <span>Carretera Federal México-Puebla Km 34.5, Ixtapaluca, Edo.
+                Méx.</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+              <span>(55) 5972 9800 ext. 1215</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+              <span>acarino@hraei.gob.mx</span>
             </div>
           </div>
         </div>
-        <div
-          class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50"
-        >
-          <p>
-            © 2026 Hospital Regional de Alta Especialidad de Ixtapaluca. Todos
-            los derechos reservados.
-          </p>
-          <div class="flex gap-4">
-            <a class="hover:text-white" href="#">Aviso de Privacidad</a>
-            <a class="hover:text-white" href="#">Términos y Condiciones</a>
-          </div>
+      </div>
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <p>
+          © 2026 Hospital Regional de Alta Especialidad de Ixtapaluca. Todos
+          los derechos reservados.
+        </p>
+        <div class="flex gap-4">
+          <a class="hover:text-white" href="#">Aviso de Privacidad</a>
+          <a class="hover:text-white" href="#">Términos y Condiciones</a>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>
