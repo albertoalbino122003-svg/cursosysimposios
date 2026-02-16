@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --vino: #611232;
+    --dorado: #a57f2c;
+    --verde: #002f2a;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: var(--vino);
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo-area {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .logo-box {
+    width: 80px;
+    height: 60px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--vino);
+}
+
+.sidebar {
+    width: 230px;
+    background: var(--verde);
+    min-height: 100vh;
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sidebar a:hover {
+    background: var(--dorado);
+    color: black;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 25px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: var(--vino);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--dorado);
+    color: black;
+}
+
+.btn-danger {
+    background: #b30000;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #ff3c3c;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: var(--vino);
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1, h2 {
+    color: var(--vino);
+}

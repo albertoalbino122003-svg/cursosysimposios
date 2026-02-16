@@ -1,3 +1,22 @@
+<?php
+include("conexion.php");
+
+if (!isset($_GET['id'])) {
+  die("Error: No se recibió el ID del curso.");
+}
+
+$id = intval($_GET['id']);
+
+$sql = "SELECT * FROM cursos WHERE id = $id";
+$resultado = $conex->query($sql);
+
+if ($resultado->num_rows == 0) {
+  die("Error: Curso no encontrado.");
+}
+
+$curso = $resultado->fetch_assoc();
+?>
+
 <!doctype html>
 <html class="light" lang="es">
 
@@ -92,19 +111,10 @@
       <!-- Navigation & Profile -->
       <div class="flex items-center gap-4 md:gap-6">
         <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/90">
-          <a class="hover:text-white transition-colors" href="Inicio.html">Inicio</a>
+          <a class="hover:text-white transition-colors" href="Inicio.php">Inicio</a>
           <a class="hover:text-white transition-colors" href="mis_cursos.html">Mis Cursos</a>
-          <!-- <a class="hover:text-white transition-colors" href="#">Ayuda</a> -->
         </nav>
         <div class="flex items-center gap-3 pl-4 border-l border-white/20">
-          <!-- <button
-              class="relative p-1 text-white/80 hover:text-white transition-colors"
-            >
-              <span class="material-symbols-outlined">notifications</span>
-              <span
-                class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary border border-primary"
-              ></span>
-            </button> -->
           <div
             class="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white/20 p-0.5 cursor-pointer ring-2 ring-transparent hover:ring-white/30 transition-all">
             <a href="perfil.php">
@@ -116,189 +126,154 @@
       </div>
     </div>
   </header>
+
   <main class="flex-grow">
-    <!-- <nav class="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 py-3 md:py-4">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8">
-<ol class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-<li><a class="hover:text-primary transition-colors hover:underline" href="#">Inicio</a></li>
-<li><span class="text-gray-300">/</span></li>
-<li><a class="hover:text-primary transition-colors hover:underline" href="#">Catálogo</a></li>
-<li><span class="text-gray-300">/</span></li>
-<li class="font-medium text-primary dark:text-white">Detalle del Curso</li>
-</ol>
-</div>
-</nav> -->
+
     <section class="relative h-[420px] w-full overflow-hidden bg-gray-900">
       <div class="absolute inset-0 z-0">
-        <img alt="Violencia contra la mujer course background" class="h-full w-full object-cover opacity-60"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5Sbf1Rw-8z183CdGaEvH3rUia_K_NkdHueTAhbH2lcq7IOsCBBOGveqy-p9E2u3q5pIcUJTVW6gNqeoJ0YtqVJCYcvBaHPLoOiE0bhcjAxnksnGsqSqgK4zhXCyn2JmJ22yBy3vwIpgbAVemSuBFbw8oqeNYHSHXWuNtJX1gcBi825Db3GaLVcmzlHURkCvYMuFIj6uZkfaWjg302v9K6bixq6rHmOBkyCGuhM1kY8BZCwN7-OIv9fKnHZb9_G46oJcCGXMajuM" />
+        <img alt="Imagen del curso" class="h-full w-full object-cover opacity-60"
+          src="<?php echo $curso['imagen']; ?>" />
+
         <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-black/40 mix-blend-multiply">
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
       </div>
+
       <div class="relative z-10 h-full max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col justify-end pb-12 text-white">
         <div class="max-w-3xl animate-fade-in-up">
           <div class="flex flex-wrap items-center gap-3 mb-4">
+
             <span
-              class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wider">Simposio</span>
-            <!-- <span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded border border-white/20 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">school</span> 12 Créditos
-                    </span> -->
-            <span
-              class="bg-green-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
-              <span class="material-symbols-outlined text-[14px]">check_circle</span>
-              Abierto
+              class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wider">
+              <?php echo $curso['tipo']; ?>
             </span>
+
+            <?php if ($curso['disponible'] == 'SI') { ?>
+              <span
+                class="bg-green-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Abierto
+              </span>
+            <?php } else { ?>
+              <span
+                class="bg-gray-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">cancel</span>
+                Cerrado
+              </span>
+            <?php } ?>
+
           </div>
+
           <h1 class="font-serif text-3xl md:text-5xl lg:text-5xl font-bold leading-tight mb-4 drop-shadow-md">
-            Violencia contra la mujer:<br />Abordaje Clínico Integral
+            <?php echo $curso['titulo']; ?>
           </h1>
+
           <p class="text-lg md:text-xl text-white/90 font-light mb-0 max-w-2xl leading-relaxed">
-            Estrategias multidisciplinarias para la detección, atención y
-            seguimiento de casos en el entorno hospitalario bajo la NOM-046.
+            <?php echo $curso['descripcion']; ?>
           </p>
+
         </div>
       </div>
     </section>
+
     <div class="max-w-[1280px] mx-auto px-4 md:px-8 py-10 md:py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
         <div class="lg:col-span-8 space-y-12">
+
           <section>
             <h3 class="font-serif text-2xl font-bold text-primary dark:text-white mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-secondary">info</span>
               Acerca de este curso
             </h3>
+
             <div class="prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-none">
               <p class="mb-4">
-                La violencia contra las mujeres es un grave problema de salud
-                pública y una violación de los derechos humanos. Este simposio
-                proporciona a los profesionales de la salud las competencias
-                necesarias para identificar signos de violencia, brindar una
-                primera respuesta empática y efectiva, y activar las rutas de
-                atención correspondientes.
-              </p>
-              <p>
-                A través de casos clínicos y revisión de normativas vigentes,
-                los participantes aprenderán a integrar la perspectiva de
-                género en su práctica diaria, garantizando la no
-                revictimización y el acceso a la justicia y la salud integral.
+                <?php echo nl2br($curso['descripcion']); ?>
               </p>
             </div>
+
             <div
               class="mt-8 p-5 bg-gray-50 dark:bg-zinc-800/50 border border-gray-100 dark:border-zinc-700 rounded-xl flex items-center gap-4">
+
               <img alt="Instructor Profile"
                 class="w-14 h-14 rounded-full border-2 border-white dark:border-zinc-700 shadow-sm"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3TW6iMLPk6dm2LfedZkcwkfGQQpewwv0cwRmMQ1Gwf-AOw-uYzUQAy0CfuzpYd2QRSxCVMa930PUBtT5Oy2Xi3gS1s5YQIl-G9eUyONRqLNX4BELwCDxB99K7N3YOJ6U4OyPDs9XWSUcTroD1wSX0XvRt89fMWuP6qh2ZeuAYrn3rXYWTOCgzE8sM_Dmou9qpUVsBjql2djzxgSPtsrtqmgg7l6jHQQ5kKOcAPA8lNWk9rErDtzaJQz-XD0Hp_iit68_pw_3BRGU" />
+                src="assets/imagenes/doctor.jpg" />
+
               <div>
                 <p class="text-sm font-bold text-gray-900 dark:text-white">
-                  Dra. Elena Ruiz Mendoza
+                  <?php echo $curso['doctor_principal']; ?>
                 </p>
+
                 <p class="text-xs text-gray-500 dark:text-gray-400">
-                  Coordinadora de la Clínica de Género y Salud HRAEI
+                  <?php echo $curso['doctores_secundarios']; ?>
                 </p>
               </div>
+
             </div>
           </section>
+
           <section>
             <h3 class="font-serif text-2xl font-bold text-primary dark:text-white mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-secondary">target</span>
               Objetivos de Aprendizaje
             </h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <li
-                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
-                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
-                <span class="text-sm text-gray-700 dark:text-gray-300">Identificar indicadores de violencia física,
-                  sexual y
-                  psicológica en la consulta.</span>
-              </li>
-              <li
-                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
-                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
-                <span class="text-sm text-gray-700 dark:text-gray-300">Aplicar correctamente la NOM-046-SSA2-2005 y los
-                  formatos
-                  de notificación.</span>
-              </li>
-              <li
-                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
-                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
-                <span class="text-sm text-gray-700 dark:text-gray-300">Desarrollar habilidades de entrevista clínica
-                  sensible y
-                  libre de prejuicios.</span>
-              </li>
-              <li
-                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
-                <span class="material-symbols-outlined text-green-600 mt-0.5">check_circle</span>
-                <span class="text-sm text-gray-700 dark:text-gray-300">Conocer la ruta de referencia y contrarreferencia
-                  intrahospitalaria.</span>
-              </li>
-            </ul>
+
+            <div class="prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-none">
+              <p>
+                <?php echo nl2br($curso['objetivos']); ?>
+              </p>
+            </div>
+
           </section>
+
           <section>
             <h3 class="font-serif text-2xl font-bold text-primary dark:text-white mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-secondary">menu_book</span>
-              Temario
+              Información del Curso
             </h3>
-            <div class="space-y-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div
-                class="border border-gray-200 dark:border-zinc-700 rounded-lg overflow-hidden transition-all hover:border-secondary/50">
-                <div
-                  class="bg-gray-50 dark:bg-zinc-800 px-6 py-4 flex justify-between items-center cursor-pointer group">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="w-8 h-8 rounded-full bg-primary/10 text-primary dark:text-white flex items-center justify-center font-bold text-sm">1</span>
-                    <h4 class="font-bold text-gray-800 dark:text-white group-hover:text-primary transition-colors">
-                      Marco Legal y Normativo
-                    </h4>
-                  </div>
-                  <span class="material-symbols-outlined text-gray-400">expand_more</span>
-                </div>
-                <div class="px-6 py-4 bg-white dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800">
-                  <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Contexto epidemiológico. Legislación internacional y
-                    nacional. Análisis detallado de la Norma Oficial Mexicana
-                    046.
-                  </p>
-                </div>
+                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
+                <span class="material-symbols-outlined text-secondary mt-0.5">calendar_month</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">
+                  <b>Inicio:</b> <?php echo $curso['fecha_inicio']; ?>
+                  <br>
+                  <b>Fin:</b> <?php echo $curso['fecha_fin']; ?>
+                </span>
               </div>
+
               <div
-                class="border border-gray-200 dark:border-zinc-700 rounded-lg overflow-hidden transition-all hover:border-secondary/50">
-                <div
-                  class="bg-gray-50 dark:bg-zinc-800 px-6 py-4 flex justify-between items-center cursor-pointer group">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="w-8 h-8 rounded-full bg-primary/10 text-primary dark:text-white flex items-center justify-center font-bold text-sm">2</span>
-                    <h4 class="font-bold text-gray-800 dark:text-white group-hover:text-primary transition-colors">
-                      Detección y Tamizaje
-                    </h4>
-                  </div>
-                  <span class="material-symbols-outlined text-gray-400">expand_more</span>
-                </div>
-                <div class="px-6 py-4 bg-white dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800">
-                  <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Herramientas de tamizaje en urgencias y consulta externa.
-                    Signos de alarma. Entrevista clínica y manejo de la
-                    crisis.
-                  </p>
-                </div>
+                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
+                <span class="material-symbols-outlined text-secondary mt-0.5">schedule</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">
+                  <b>Horario:</b>
+                  <?php echo substr($curso['hora_inicio'], 0, 5); ?> - <?php echo substr($curso['hora_fin'], 0, 5); ?>
+                </span>
               </div>
+
               <div
-                class="border border-gray-200 dark:border-zinc-700 rounded-lg overflow-hidden transition-all hover:border-secondary/50">
-                <div
-                  class="bg-gray-50 dark:bg-zinc-800 px-6 py-4 flex justify-between items-center cursor-pointer group">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="w-8 h-8 rounded-full bg-primary/10 text-primary dark:text-white flex items-center justify-center font-bold text-sm">3</span>
-                    <h4 class="font-bold text-gray-800 dark:text-white group-hover:text-primary transition-colors">
-                      Atención Médica y Profilaxis
-                    </h4>
-                  </div>
-                  <span class="material-symbols-outlined text-gray-400">expand_more</span>
-                </div>
+                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
+                <span class="material-symbols-outlined text-secondary mt-0.5">school</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">
+                  <b>Total de horas:</b> <?php echo $curso['total_horas']; ?>
+                </span>
+              </div>
+
+              <div
+                class="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-gray-100 dark:border-zinc-700">
+                <span class="material-symbols-outlined text-secondary mt-0.5">person</span>
+                <span class="text-sm text-gray-700 dark:text-gray-300">
+                  <b>Responsable:</b> <?php echo $curso['doctor_principal']; ?>
+                </span>
               </div>
             </div>
+
           </section>
+
         </div>
+
         <div class="lg:col-span-4">
           <div class="sticky top-24 space-y-6">
             <div
@@ -309,51 +284,80 @@
                   <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white">
                     Ficha de Inscripción
                   </h3>
-                  <span
-                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold border border-green-200">DISPONIBLE</span>
+
+                  <?php if ($curso['disponible'] == 'SI') { ?>
+                    <span
+                      class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold border border-green-200">
+                      DISPONIBLE
+                    </span>
+                  <?php } else { ?>
+                    <span
+                      class="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded font-bold border border-gray-300">
+                      NO DISPONIBLE
+                    </span>
+                  <?php } ?>
+
                 </div>
+
                 <div class="space-y-5 mb-8">
+
                   <div class="relative group">
-                    <label
-                      class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">Participante</label>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">
+                      Curso / Simposio
+                    </label>
                     <div
                       class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium">
-                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">person</span>
-                      Dr. Alejandro Morales
-                      <span class="ml-auto material-symbols-outlined text-green-600 text-[18px]"
-                        title="Verificado">verified</span>
+                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">menu_book</span>
+                      <?php echo $curso['titulo']; ?>
                     </div>
                   </div>
+
                   <div class="relative group">
-                    <label
-                      class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">Correo</label>
-                    <div
-                      class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium font-mono text-sm tracking-wide">
-                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">badge</span>
-                      alejandro.morales@gmail.com
-                    </div>
-                  </div>
-                  <div class="relative group">
-                    <label
-                      class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">Institución</label>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">
+                      Tipo
+                    </label>
                     <div
                       class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium">
-                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">apartment</span>
-                      HRAEI
+                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">category</span>
+                      <?php echo $curso['tipo']; ?>
                     </div>
                   </div>
+
                   <div class="relative group">
-                    <label
-                      class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">Especialidad</label>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">
+                      Fechas
+                    </label>
                     <div
                       class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium">
-                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">person</span>
-                      cardiología
-                      <span class="ml-auto material-symbols-outlined text-green-600 text-[18px]"
-                        title="Verificado">verified</span>
+                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">calendar_month</span>
+                      <?php echo $curso['fecha_inicio']; ?> - <?php echo $curso['fecha_fin']; ?>
                     </div>
                   </div>
+
+                  <div class="relative group">
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">
+                      Horario
+                    </label>
+                    <div
+                      class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium">
+                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">schedule</span>
+                      <?php echo substr($curso['hora_inicio'], 0, 5); ?> - <?php echo substr($curso['hora_fin'], 0, 5); ?>
+                    </div>
+                  </div>
+
+                  <div class="relative group">
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 ml-1">
+                      Total Horas
+                    </label>
+                    <div
+                      class="flex items-center bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-lg px-4 py-3 text-gray-800 dark:text-gray-200 font-medium">
+                      <span class="material-symbols-outlined text-gray-400 mr-3 text-[20px]">school</span>
+                      <?php echo $curso['total_horas']; ?> Horas
+                    </div>
+                  </div>
+
                 </div>
+
                 <div class="flex items-start gap-3 mb-6">
                   <div class="flex h-5 items-center">
                     <input checked=""
@@ -366,23 +370,29 @@
                     del programa académico 2026.
                   </div>
                 </div>
+
                 <button onclick="confirmarInscripcion()"
-                  class="w-full bg-primary hover:bg-[#5a1632] text-white font-bold text-lg py-4 px-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
+                  class="w-full bg-primary hover:bg-[#5a1632] text-white font-bold text-lg py-4 px-6 rounded-lg shadow-md hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+                  <?php echo ($curso['disponible'] == 'SI') ? "" : "disabled"; ?>>
+
                   <span>Confirmar Inscripción</span>
-                  <span
-                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+
                 </button>
+
                 <script>
                   function confirmarInscripcion() {
-                    const confirmacion = confirm(
-                      "¿Seguro que deseas confirmar tu inscripción?",
-                    );
+                    const confirmacion = confirm("¿Seguro que deseas confirmar tu inscripción?");
                     if (confirmacion) {
                       window.location.href = "confirmacion.html";
                     }
                   }
                 </script>
+
               </div>
+
               <div class="bg-gray-50 dark:bg-zinc-900/50 p-4 border-t border-gray-100 dark:border-zinc-700 text-center">
                 <p class="text-xs text-gray-500">
                   <span class="font-bold">¿Dudas?</span> Contacte a
@@ -390,6 +400,7 @@
                 </p>
               </div>
             </div>
+
             <div
               class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-5 border border-blue-100 dark:border-blue-800 flex items-start gap-3">
               <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 mt-0.5">info</span>
@@ -398,11 +409,14 @@
                 la Dirección de Enseñanza e Investigación.
               </p>
             </div>
+
           </div>
         </div>
+
       </div>
     </div>
   </main>
+
   <footer class="bg-primary text-white/90 pt-16 pb-8 border-t-4 border-secondary" id="info">
     <div class="max-w-[1280px] mx-auto px-4 md:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -427,28 +441,25 @@
             </li>
           </ul>
         </div>
+
         <div>
           <h4 class="font-bold text-white mb-4">Institucional</h4>
           <ul class="space-y-2 text-sm text-white/70">
             <li>
-              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Sobre
-                Nosotros</a>
+              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Sobre Nosotros</a>
             </li>
             <li>
-              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4"
-                href="#">Directorio</a>
+              <a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Directorio</a>
             </li>
-            <!-- <li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Investigación</a></li>
-<li><a class="hover:text-white hover:underline decoration-secondary underline-offset-4" href="#">Bolsa de Trabajo</a></li> -->
           </ul>
         </div>
+
         <div>
           <h4 class="font-bold text-white mb-4">Contacto</h4>
           <div class="flex flex-col gap-3 text-sm text-white/70">
             <div class="flex items-start gap-2">
               <span class="material-symbols-outlined text-[18px] mt-0.5">location_on</span>
-              <span>Carretera Federal México-Puebla Km 34.5, Ixtapaluca, Edo.
-                Méx.</span>
+              <span>Carretera Federal México-Puebla Km 34.5, Ixtapaluca, Edo. Méx.</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-[18px]">call</span>
@@ -461,11 +472,11 @@
           </div>
         </div>
       </div>
+
       <div
         class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
         <p>
-          © 2026 Hospital Regional de Alta Especialidad de Ixtapaluca. Todos
-          los derechos reservados.
+          © 2026 Hospital Regional de Alta Especialidad de Ixtapaluca. Todos los derechos reservados.
         </p>
         <div class="flex gap-4">
           <a class="hover:text-white" href="#">Aviso de Privacidad</a>
@@ -474,6 +485,7 @@
       </div>
     </div>
   </footer>
+
 </body>
 
 </html>
