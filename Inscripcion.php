@@ -376,7 +376,7 @@ $curso = $resultado->fetch_assoc();
                   function confirmarInscripcion() {
                     const confirmacion = confirm("¿Seguro que deseas confirmar tu inscripción?");
                     if (confirmacion) {
-                      window.location.href = "confirmacion.html";
+                      window.location.href = "guardar_inscripcion.php?curso_id=<?php echo $curso['id']; ?>";
                     }
                   }
                 </script>
