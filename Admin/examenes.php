@@ -55,7 +55,7 @@ ORDER BY e.id DESC
 </div>
 
 <div class="sidebar">
-    <a href="dashboard.php">🏠 Dashboard</a>
+    <a href="dashboard.php">🏠 Inicio</a>
     <a href="cursos.php">📚 Cursos / Simposios</a>
     <a href="modulos.php">📌 Módulos</a>
     <a href="examenes.php">📝 Exámenes</a>
