@@ -148,20 +148,10 @@ $curso = $resultado->fetch_assoc();
               <?php echo $curso['tipo']; ?>
             </span>
 
-            <?php if ($curso['disponible'] == 'SI') { ?>
-              <span
-                class="bg-green-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px]">check_circle</span>
-                Abierto
-              </span>
-            <?php } else { ?>
-              <span
-                class="bg-gray-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px]">cancel</span>
-                Cerrado
-              </span>
-            <?php } ?>
-
+            <span class="bg-green-600/90 text-white text-xs font-bold px-3 py-1 rounded shadow-sm flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">check_circle</span>
+              <?php echo ($curso['disponible'] == 'SI') ? "ABIERTO" : "CERRADO"; ?>
+            </span>
           </div>
 
           <h1 class="font-serif text-3xl md:text-5xl lg:text-5xl font-bold leading-tight mb-4 drop-shadow-md">

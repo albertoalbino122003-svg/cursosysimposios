@@ -70,12 +70,12 @@
                 })
             });
 
-            // Esperamos la respuesta
+            // Esperamos la respuestax
             const data = await response.json();
 
             if (data.success) {
                 // Si el PHP dice que es correcto, redirigimos
-                window.location.href = "Inicio.html";
+                window.location.href = "Inicio.php";
             } else {
                 // Si la contraseña o usuario están mal, mostramos el error del PHP
                 alert(data.message || "Error al iniciar sesión");

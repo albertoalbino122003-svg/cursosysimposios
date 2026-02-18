@@ -114,7 +114,7 @@ $stmt->close();
             </div>
             <div class="flex items-center gap-4 md:gap-6">
                 <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/90">
-                    <a class="hover:text-white transition-colors" href="Inicio.html">Inicio</a>
+                    <a class="hover:text-white transition-colors" href="Inicio.php">Inicio</a>
                     <a class="text-white border-b-2 border-secondary pb-1" href="mis_cursos.html">Mis Cursos</a>
                 </nav>
                 <div class="flex items-center gap-3 pl-4 border-l border-white/20">
@@ -128,7 +128,7 @@ $stmt->close();
 
     <main class="flex-grow max-w-[1280px] mx-auto w-full px-4 md:px-8 py-8 md:py-12">
         <nav class="flex items-center gap-2 text-sm text-gray-500 mb-6">
-            <a class="hover:text-primary transition-colors" href="Inicio.html">Inicio</a>
+            <a class="hover:text-primary transition-colors" href="Inicio.php">Inicio</a>
             <span class="material-symbols-outlined text-[16px]">chevron_right</span>
             <span class="font-semibold text-primary">Mi Perfil</span>
         </nav>
